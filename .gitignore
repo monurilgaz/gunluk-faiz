@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.har
+server.js
+js/scraper.js
+js/comparison.js
+analyze_bank_rates.py
+worker/

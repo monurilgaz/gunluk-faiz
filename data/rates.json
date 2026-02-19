@@ -1,0 +1,1379 @@
+{
+  "lastUpdated": "2026-02-19T18:09:51.312Z",
+  "defaultWithholdingRate": 17.5,
+  "banks": [
+    {
+      "id": "akbank",
+      "name": "Akbank",
+      "type": "mevduat",
+      "productName": "Serbest Plus Hesap",
+      "website": "https://www.akbank.com",
+      "url": "https://www.akbank.com/mevduat-yatirim/mevduat/vadeli-mevduat-hesaplari/serbest-plus-hesap",
+      "tiers": [
+        {
+          "min": 1000,
+          "max": 8999,
+          "annualRate": 40,
+          "nib": 0,
+          "nibPercentage": 10
+        },
+        {
+          "min": 9000,
+          "max": 449999,
+          "annualRate": 40,
+          "nib": 0,
+          "nibPercentage": 10
+        },
+        {
+          "min": 450000,
+          "max": 899999,
+          "annualRate": 40,
+          "nib": 0,
+          "nibPercentage": 10
+        },
+        {
+          "min": 900000,
+          "max": 10000000,
+          "annualRate": 40,
+          "nib": 0,
+          "nibPercentage": 10
+        },
+        {
+          "min": 10000000,
+          "max": 999999999999,
+          "annualRate": 4,
+          "nib": 0,
+          "nibPercentage": 10
+        }
+      ]
+    },
+    {
+      "id": "alternatifbank",
+      "name": "Alternatifbank",
+      "type": "mevduat",
+      "productName": "VOV Hesap",
+      "website": "https://www.alternatifbank.com.tr",
+      "url": "https://www.alternatifbank.com.tr/bireysel/mevduat/vadeli-mevduat/vov-hesap#faizorani",
+      "tiers": [
+        {
+          "min": 20000,
+          "max": 250000,
+          "annualRate": 44,
+          "nib": 20000
+        },
+        {
+          "min": 250001,
+          "max": 500000,
+          "annualRate": 44,
+          "nib": 40000
+        },
+        {
+          "min": 500001,
+          "max": 1000000,
+          "annualRate": 44,
+          "nib": 75000
+        },
+        {
+          "min": 1000001,
+          "max": 1500000,
+          "annualRate": 44,
+          "nib": 150000
+        },
+        {
+          "min": 1500001,
+          "max": 2000000,
+          "annualRate": 44,
+          "nib": 175000
+        },
+        {
+          "min": 2000001,
+          "max": 3000000,
+          "annualRate": 43.5,
+          "nib": 250000
+        },
+        {
+          "min": 3000001,
+          "max": 4000000,
+          "annualRate": 43.5,
+          "nib": 350000
+        },
+        {
+          "min": 4000001,
+          "max": 5000000,
+          "annualRate": 43.5,
+          "nib": 450000
+        },
+        {
+          "min": 5000001,
+          "max": 7500000,
+          "annualRate": 43,
+          "nib": 600000
+        },
+        {
+          "min": 7500001,
+          "max": 10000000,
+          "annualRate": 43,
+          "nib": 900000
+        },
+        {
+          "min": 10000001,
+          "max": 15000000,
+          "annualRate": 43,
+          "nib": 1500000
+        },
+        {
+          "min": 15000001,
+          "max": null,
+          "annualRate": 41,
+          "nib": 2500000
+        }
+      ]
+    },
+    {
+      "id": "anadolubank",
+      "name": "Anadolubank",
+      "type": "mevduat",
+      "productName": "Renkli Hesap",
+      "website": "https://www.anadolubank.com.tr",
+      "url": "https://www.anadolubank.com.tr/sizin-icin/birikim-ve-mevduat/renkli-hesap",
+      "tiers": [
+        {
+          "min": 1000,
+          "max": 49999,
+          "annualRate": 43,
+          "nib": 2500
+        },
+        {
+          "min": 50000,
+          "max": 99999,
+          "annualRate": 43,
+          "nib": 5000
+        },
+        {
+          "min": 100000,
+          "max": 249999,
+          "annualRate": 43,
+          "nib": 12500
+        },
+        {
+          "min": 250000,
+          "max": 499999,
+          "annualRate": 43,
+          "nib": 25000
+        },
+        {
+          "min": 500000,
+          "max": 999999,
+          "annualRate": 43,
+          "nib": 50000
+        },
+        {
+          "min": 1000000,
+          "max": 1999999,
+          "annualRate": 43,
+          "nib": 90000
+        },
+        {
+          "min": 2000000,
+          "max": 2999999,
+          "annualRate": 43,
+          "nib": 200000
+        },
+        {
+          "min": 3000000,
+          "max": 3999999,
+          "annualRate": 43,
+          "nib": 300000
+        },
+        {
+          "min": 4000000,
+          "max": 4999999,
+          "annualRate": 43,
+          "nib": 400000
+        },
+        {
+          "min": 5000000,
+          "max": 6999999,
+          "annualRate": 42,
+          "nib": 600000
+        },
+        {
+          "min": 7000000,
+          "max": 8499999,
+          "annualRate": 42,
+          "nib": 700000
+        },
+        {
+          "min": 8500000,
+          "max": 10000000,
+          "annualRate": 42,
+          "nib": 900000
+        }
+      ]
+    },
+    {
+      "id": "burgan-bank",
+      "name": "Burgan Bank",
+      "type": "mevduat",
+      "productName": "ON Plus Hesap",
+      "website": "https://on.com.tr",
+      "url": "https://on.com.tr/hesaplar/on-plus",
+      "tiers": [
+        {
+          "min": 10500,
+          "max": 49999,
+          "annualRate": 43.5,
+          "nib": 10000
+        },
+        {
+          "min": 50000,
+          "max": 99999,
+          "annualRate": 43.5,
+          "nib": 12500
+        },
+        {
+          "min": 100000,
+          "max": 249999,
+          "annualRate": 43.5,
+          "nib": 25000
+        },
+        {
+          "min": 250000,
+          "max": 499999,
+          "annualRate": 43.5,
+          "nib": 50000
+        },
+        {
+          "min": 500000,
+          "max": 749999,
+          "annualRate": 43.5,
+          "nib": 90000
+        },
+        {
+          "min": 750000,
+          "max": 999999,
+          "annualRate": 43.5,
+          "nib": 140000
+        },
+        {
+          "min": 1000000,
+          "max": 1249999,
+          "annualRate": 43,
+          "nib": 165000
+        },
+        {
+          "min": 1250000,
+          "max": 1499999,
+          "annualRate": 43,
+          "nib": 175000
+        },
+        {
+          "min": 1500000,
+          "max": 1749999,
+          "annualRate": 43,
+          "nib": 200000
+        },
+        {
+          "min": 1750000,
+          "max": 1999999,
+          "annualRate": 43,
+          "nib": 250000
+        },
+        {
+          "min": 2000000,
+          "max": 2499999,
+          "annualRate": 43,
+          "nib": 325000
+        },
+        {
+          "min": 2500000,
+          "max": 2999999,
+          "annualRate": 42,
+          "nib": 350000
+        },
+        {
+          "min": 3000000,
+          "max": 3999999,
+          "annualRate": 42,
+          "nib": 400000
+        },
+        {
+          "min": 4000000,
+          "max": 5000000,
+          "annualRate": 41,
+          "nib": 500000
+        }
+      ]
+    },
+    {
+      "id": "denizbank",
+      "name": "Denizbank",
+      "type": "mevduat",
+      "productName": "Kaptan Hesap",
+      "website": "https://www.denizbank.com",
+      "url": "https://www.denizbank.com/hesap/kaptan",
+      "tiers": [
+        {
+          "min": 10000,
+          "max": 99999,
+          "annualRate": 43,
+          "nib": 10000
+        },
+        {
+          "min": 100000,
+          "max": 249999,
+          "annualRate": 43,
+          "nib": 20000
+        },
+        {
+          "min": 250000,
+          "max": 499999,
+          "annualRate": 43,
+          "nib": 40000
+        },
+        {
+          "min": 500000,
+          "max": 749999,
+          "annualRate": 43,
+          "nib": 70000
+        },
+        {
+          "min": 750000,
+          "max": 1249999,
+          "annualRate": 43,
+          "nib": 100000
+        },
+        {
+          "min": 1250000,
+          "max": 1499999,
+          "annualRate": 43,
+          "nib": 125000
+        },
+        {
+          "min": 1500000,
+          "max": 1999999,
+          "annualRate": 43,
+          "nib": 150000
+        },
+        {
+          "min": 2000000,
+          "max": 2999999,
+          "annualRate": 43,
+          "nib": 200000
+        },
+        {
+          "min": 3000000,
+          "max": 4999999,
+          "annualRate": 43,
+          "nib": 300000
+        },
+        {
+          "min": 5000000,
+          "max": 7499999,
+          "annualRate": 43,
+          "nib": 600000
+        },
+        {
+          "min": 7500000,
+          "max": 10000000,
+          "annualRate": 43,
+          "nib": 900000
+        }
+      ]
+    },
+    {
+      "id": "fibabanka",
+      "name": "Fibabanka",
+      "type": "mevduat",
+      "productName": "Kiraz Hesap",
+      "website": "https://www.fibabanka.com.tr",
+      "url": "https://www.fibabanka.com.tr/mevduat/kiraz-hesap",
+      "tiers": [
+        {
+          "min": 10000,
+          "max": 24999,
+          "annualRate": 42,
+          "nib": 5000
+        },
+        {
+          "min": 25000,
+          "max": 49999,
+          "annualRate": 42,
+          "nib": 7500
+        },
+        {
+          "min": 50000,
+          "max": 99999,
+          "annualRate": 42,
+          "nib": 10000
+        },
+        {
+          "min": 100000,
+          "max": 249999,
+          "annualRate": 42,
+          "nib": 20000
+        },
+        {
+          "min": 250000,
+          "max": 499999,
+          "annualRate": 42,
+          "nib": 40000
+        },
+        {
+          "min": 500000,
+          "max": 999999,
+          "annualRate": 42,
+          "nib": 65000
+        },
+        {
+          "min": 1000000,
+          "max": 1999999,
+          "annualRate": 42,
+          "nib": 175000
+        },
+        {
+          "min": 2000000,
+          "max": 2999999,
+          "annualRate": 42,
+          "nib": 300000
+        },
+        {
+          "min": 3000000,
+          "max": 3999999,
+          "annualRate": 42,
+          "nib": 400000
+        },
+        {
+          "min": 4000000,
+          "max": 4999999,
+          "annualRate": 42,
+          "nib": 500000
+        },
+        {
+          "min": 5000000,
+          "max": 7500000,
+          "annualRate": 42,
+          "nib": 1250000
+        }
+      ]
+    },
+    {
+      "id": "garanti-bbva",
+      "name": "Garanti BBVA",
+      "type": "mevduat",
+      "productName": "e-Vadeli Hesap",
+      "website": "https://www.garantibbva.com.tr",
+      "url": "https://www.garantibbva.com.tr/mevduat/vadeli-tl-hesabi",
+      "tiers": [
+        {
+          "min": 1000,
+          "max": 25000,
+          "annualRate": 24,
+          "nib": 0
+        },
+        {
+          "min": 25000,
+          "max": 100000,
+          "annualRate": 24,
+          "nib": 0
+        },
+        {
+          "min": 100000,
+          "max": 300000,
+          "annualRate": 24,
+          "nib": 0
+        },
+        {
+          "min": 300000,
+          "max": 500000,
+          "annualRate": 24,
+          "nib": 0
+        },
+        {
+          "min": 500000,
+          "max": 1000000,
+          "annualRate": 24,
+          "nib": 0
+        },
+        {
+          "min": 1000000,
+          "max": 3000000,
+          "annualRate": 24,
+          "nib": 0
+        },
+        {
+          "min": 3000000,
+          "max": 5000000,
+          "annualRate": 24,
+          "nib": 0
+        },
+        {
+          "min": 5000000,
+          "max": null,
+          "annualRate": 24,
+          "nib": 0
+        }
+      ]
+    },
+    {
+      "id": "halkbank",
+      "name": "Halkbank",
+      "type": "mevduat",
+      "productName": "e-Vadeli Mevduat",
+      "website": "https://www.halkbank.com.tr",
+      "url": "https://www.halkbank.com.tr/tr/bireysel/mevduat/mevduat-faiz-oranlari/vadeli-tl-mevduat-faiz-oranlari",
+      "tiers": [
+        {
+          "min": 0.01,
+          "max": 25000.99,
+          "annualRate": 0.01,
+          "nib": 0
+        },
+        {
+          "min": 25001,
+          "max": 250000.99,
+          "annualRate": 29,
+          "nib": 0
+        },
+        {
+          "min": 250001,
+          "max": 1000000.99,
+          "annualRate": 32,
+          "nib": 0
+        },
+        {
+          "min": 1000001,
+          "max": 5000000.99,
+          "annualRate": 33,
+          "nib": 0
+        },
+        {
+          "min": 5000001,
+          "max": 10000000.99,
+          "annualRate": 33,
+          "nib": 0
+        },
+        {
+          "min": 10000001,
+          "max": 99999999999.99,
+          "annualRate": 0.01,
+          "nib": 0
+        }
+      ]
+    },
+    {
+      "id": "hsbc",
+      "name": "HSBC",
+      "type": "mevduat",
+      "productName": "Modern Hesap",
+      "website": "https://www.hsbc.com.tr",
+      "url": "https://www.hsbc.com.tr/gunluk-bankacilik/mevduat-urunleri/faiz-oranlari",
+      "tiers": [
+        {
+          "min": 0,
+          "max": 250000,
+          "annualRate": 42.5,
+          "nib": 30000
+        },
+        {
+          "min": 250000.01,
+          "max": 500000,
+          "annualRate": 42.5,
+          "nib": 40000
+        },
+        {
+          "min": 500000.01,
+          "max": 1000000,
+          "annualRate": 42.5,
+          "nib": 60000
+        },
+        {
+          "min": 1000000.01,
+          "max": 1500000,
+          "annualRate": 42.5,
+          "nib": 75000
+        },
+        {
+          "min": 1500000.01,
+          "max": 2000000,
+          "annualRate": 42.5,
+          "nib": 100000
+        },
+        {
+          "min": 2000000.01,
+          "max": 3000000,
+          "annualRate": 42.5,
+          "nib": 150000
+        }
+      ]
+    },
+    {
+      "id": "ing",
+      "name": "ING",
+      "type": "mevduat",
+      "productName": "Turuncu Hesap",
+      "website": "https://www.ing.com.tr",
+      "url": "https://www.ing.com.tr/tr/sizin-icin/mevduat/ing-turuncu-hesap",
+      "tiers": [
+        {
+          "min": 3000,
+          "max": 9999,
+          "annualRate": 40,
+          "nib": 3000
+        },
+        {
+          "min": 10000,
+          "max": 49999,
+          "annualRate": 40,
+          "nib": 5000
+        },
+        {
+          "min": 50000,
+          "max": 99999,
+          "annualRate": 40,
+          "nib": 7500
+        },
+        {
+          "min": 100000,
+          "max": 249999,
+          "annualRate": 40,
+          "nib": 15000
+        },
+        {
+          "min": 250000,
+          "max": 499999,
+          "annualRate": 40,
+          "nib": 30000
+        },
+        {
+          "min": 500000,
+          "max": 999999,
+          "annualRate": 40,
+          "nib": 75000
+        },
+        {
+          "min": 1000000,
+          "max": 1999999,
+          "annualRate": 40,
+          "nib": 150000
+        },
+        {
+          "min": 2000000,
+          "max": 4999999,
+          "annualRate": 40,
+          "nib": 285000
+        },
+        {
+          "min": 5000000,
+          "max": 7499999,
+          "annualRate": 40,
+          "nib": 600000
+        },
+        {
+          "min": 7500000,
+          "max": 9999999,
+          "annualRate": 40,
+          "nib": 900000
+        },
+        {
+          "min": 10000000,
+          "max": 14999999,
+          "annualRate": 40,
+          "nib": 1250000
+        },
+        {
+          "min": 15000000,
+          "max": 24999999,
+          "annualRate": 40,
+          "nib": 2000000
+        },
+        {
+          "min": 25000000,
+          "max": 34999999,
+          "annualRate": 40,
+          "nib": 3000000
+        },
+        {
+          "min": 35000000,
+          "max": null,
+          "annualRate": 23,
+          "nib": 3000000
+        }
+      ]
+    },
+    {
+      "id": "is-bankasi",
+      "name": "İş Bankası",
+      "type": "mevduat",
+      "productName": "Günlük Kazandıran Hesap",
+      "website": "https://www.isbank.com.tr",
+      "url": "https://www.isbank.com.tr/gunluk-kazandiran-hesap-faiz-oranlari",
+      "tiers": []
+    },
+    {
+      "id": "odeabank",
+      "name": "Odeabank",
+      "type": "mevduat",
+      "productName": "Oksijen Hesap",
+      "website": "https://www.odeabank.com.tr",
+      "url": "https://www.odeabank.com.tr/bireysel/mevduat/oksijen-hesap/oksijen-hesap-faiz-oranlari",
+      "tiers": [
+        {
+          "min": 0,
+          "max": 25000,
+          "annualRate": 44,
+          "nib": 7500
+        },
+        {
+          "min": 25000.01,
+          "max": 50000,
+          "annualRate": 44,
+          "nib": 7500
+        },
+        {
+          "min": 50000.01,
+          "max": 100000,
+          "annualRate": 44,
+          "nib": 10000
+        },
+        {
+          "min": 100000.01,
+          "max": 250000,
+          "annualRate": 44,
+          "nib": 20000
+        },
+        {
+          "min": 250000.01,
+          "max": 500000,
+          "annualRate": 44,
+          "nib": 40000
+        },
+        {
+          "min": 500000.01,
+          "max": 750000,
+          "annualRate": 44,
+          "nib": 75000
+        },
+        {
+          "min": 750000.01,
+          "max": 1000000,
+          "annualRate": 44,
+          "nib": 125000
+        },
+        {
+          "min": 1000000.01,
+          "max": 2000000,
+          "annualRate": 44,
+          "nib": 200000
+        },
+        {
+          "min": 2000000.01,
+          "max": 3000000,
+          "annualRate": 44,
+          "nib": 350000
+        },
+        {
+          "min": 3000000.01,
+          "max": 4000000,
+          "annualRate": 44,
+          "nib": 450000
+        },
+        {
+          "min": 4000000.01,
+          "max": 5000000,
+          "annualRate": 44,
+          "nib": 600000
+        },
+        {
+          "min": 5000000.01,
+          "max": 6000000,
+          "annualRate": 44,
+          "nib": 750000
+        },
+        {
+          "min": 6000000.01,
+          "max": 7000000,
+          "annualRate": 44,
+          "nib": 900000
+        },
+        {
+          "min": 7000000.01,
+          "max": 10000000,
+          "annualRate": 44,
+          "nib": 1000000
+        },
+        {
+          "min": 10000000.01,
+          "max": 20000000,
+          "annualRate": 43,
+          "nib": 1500000
+        },
+        {
+          "min": 20000000.01,
+          "max": 25000000,
+          "annualRate": 13.5,
+          "nib": 2000000
+        }
+      ]
+    },
+    {
+      "id": "qnb-finansbank",
+      "name": "QNB Finansbank",
+      "type": "mevduat",
+      "productName": "Kazandıran Günlük Hesap",
+      "website": "https://www.qnbfinansbank.com",
+      "url": "https://www.qnb.com.tr/kazandiran-gunluk-hesap",
+      "tiers": [
+        {
+          "min": 7500,
+          "max": 49999.99,
+          "annualRate": 42,
+          "nib": 7500
+        },
+        {
+          "min": 50000,
+          "max": 99999.99,
+          "annualRate": 42,
+          "nib": 10000
+        },
+        {
+          "min": 100000,
+          "max": 49999999,
+          "annualRate": 42,
+          "nib": 15000
+        },
+        {
+          "min": 500000,
+          "max": 999999.99,
+          "annualRate": 42,
+          "nib": 30000
+        },
+        {
+          "min": 1000000,
+          "max": 2499999.99,
+          "annualRate": 42,
+          "nib": 60000
+        },
+        {
+          "min": 2500000,
+          "max": 4999999.99,
+          "annualRate": 42,
+          "nib": 150000
+        },
+        {
+          "min": 5000000,
+          "max": 9999999.99,
+          "annualRate": 42,
+          "nib": 300000
+        },
+        {
+          "min": 10000000,
+          "max": 29999999.99,
+          "annualRate": 30.5,
+          "nib": 600000
+        }
+      ]
+    },
+    {
+      "id": "sekerbank",
+      "name": "Şekerbank",
+      "type": "mevduat",
+      "productName": "Gece Gündüz Hesabı",
+      "website": "https://www.sekerbank.com.tr",
+      "url": "https://www.sekerbank.com.tr/mevduat-ve-yatirim-urunleri/mevduat-urunleri/vadeli-mevduat/gece-gunduz-hesabi",
+      "tiers": [
+        {
+          "min": 5000,
+          "max": 49999,
+          "annualRate": 42,
+          "nib": 5000
+        },
+        {
+          "min": 50000,
+          "max": 99999,
+          "annualRate": 42,
+          "nib": 12000
+        },
+        {
+          "min": 100000,
+          "max": 249999,
+          "annualRate": 42,
+          "nib": 20000
+        },
+        {
+          "min": 250000,
+          "max": 499999,
+          "annualRate": 42,
+          "nib": 40000
+        },
+        {
+          "min": 500000,
+          "max": 999999,
+          "annualRate": 42,
+          "nib": 80000
+        },
+        {
+          "min": 1000000,
+          "max": 2999999,
+          "annualRate": 42,
+          "nib": 180000
+        },
+        {
+          "min": 3000000,
+          "max": 4999999,
+          "annualRate": 42,
+          "nib": 410000
+        },
+        {
+          "min": 5000000,
+          "max": 9999999,
+          "annualRate": 42,
+          "nib": 1000000
+        }
+      ]
+    },
+    {
+      "id": "teb",
+      "name": "TEB",
+      "type": "mevduat",
+      "productName": "Marifetli Hesap",
+      "website": "https://www.teb.com.tr",
+      "url": "https://www.cepteteb.com.tr/hesaplama/marifetli-hesap-faiz-hesaplama",
+      "tiers": [
+        {
+          "min": 5001,
+          "max": 9999,
+          "annualRate": 43,
+          "nib": 5000
+        },
+        {
+          "min": 10000,
+          "max": 24999,
+          "annualRate": 43,
+          "nib": 5000
+        },
+        {
+          "min": 25000,
+          "max": 49999,
+          "annualRate": 43,
+          "nib": 5000
+        },
+        {
+          "min": 50000,
+          "max": 99999,
+          "annualRate": 43,
+          "nib": 7500
+        },
+        {
+          "min": 100000,
+          "max": 149999,
+          "annualRate": 43,
+          "nib": 15000
+        },
+        {
+          "min": 150000,
+          "max": 199999,
+          "annualRate": 43,
+          "nib": 15000
+        },
+        {
+          "min": 200000,
+          "max": 299999,
+          "annualRate": 43,
+          "nib": 30000
+        },
+        {
+          "min": 300000,
+          "max": 499999,
+          "annualRate": 43,
+          "nib": 30000
+        },
+        {
+          "min": 500000,
+          "max": 749999,
+          "annualRate": 43,
+          "nib": 50000
+        },
+        {
+          "min": 750000,
+          "max": 999999,
+          "annualRate": 43,
+          "nib": 100000
+        },
+        {
+          "min": 1000000,
+          "max": 1499999,
+          "annualRate": 43,
+          "nib": 150000
+        },
+        {
+          "min": 1500000,
+          "max": 1999999,
+          "annualRate": 43,
+          "nib": 175000
+        },
+        {
+          "min": 2000000,
+          "max": 2999999,
+          "annualRate": 43,
+          "nib": 250000
+        },
+        {
+          "min": 3000000,
+          "max": 3999999,
+          "annualRate": 43,
+          "nib": 300000
+        },
+        {
+          "min": 4000000,
+          "max": 4999999,
+          "annualRate": 43,
+          "nib": 425000
+        },
+        {
+          "min": 5000000,
+          "max": 5999999,
+          "annualRate": 43,
+          "nib": 525000
+        },
+        {
+          "min": 6000000,
+          "max": 7000000,
+          "annualRate": 43,
+          "nib": 600000
+        },
+        {
+          "min": 7000001,
+          "max": 9000000,
+          "annualRate": 43,
+          "nib": 750000
+        },
+        {
+          "min": 9000001,
+          "max": 10000000,
+          "annualRate": 43,
+          "nib": 900000
+        }
+      ]
+    },
+    {
+      "id": "vakifbank",
+      "name": "VakıfBank",
+      "type": "mevduat",
+      "productName": "Arı Hesabı",
+      "website": "https://www.vakifbank.com.tr",
+      "url": "https://www.vakifbank.com.tr/tr/bireysel/hesaplar/vadeli-hesaplar/ari-hesabi",
+      "tiers": [
+        {
+          "min": 0,
+          "max": null,
+          "annualRate": 41,
+          "nib": 0,
+          "nibPercentage": 10
+        }
+      ]
+    },
+    {
+      "id": "yapi-kredi",
+      "name": "Yapı Kredi",
+      "type": "mevduat",
+      "productName": "Sınırsız Hesap",
+      "website": "https://www.yapikredi.com.tr",
+      "url": "https://www.yapikredi.com.tr/bireysel-bankacilik/mevduat-urunleri/sinirsiz-hesap",
+      "tiers": [
+        {
+          "min": 10000,
+          "max": 49999,
+          "annualRate": 4,
+          "nib": 5000
+        },
+        {
+          "min": 50000,
+          "max": 99999,
+          "annualRate": 4,
+          "nib": 7500
+        },
+        {
+          "min": 100000,
+          "max": 249999,
+          "annualRate": 4,
+          "nib": 15000
+        },
+        {
+          "min": 250000,
+          "max": 499999,
+          "annualRate": 4,
+          "nib": 30000
+        },
+        {
+          "min": 500000,
+          "max": 999999,
+          "annualRate": 4,
+          "nib": 60000
+        },
+        {
+          "min": 1000000,
+          "max": 1999999,
+          "annualRate": 4,
+          "nib": 120000
+        },
+        {
+          "min": 2000000,
+          "max": 2999999,
+          "annualRate": 4,
+          "nib": 200000
+        },
+        {
+          "min": 3000000,
+          "max": 5000000,
+          "annualRate": 4,
+          "nib": 300000
+        }
+      ]
+    },
+    {
+      "id": "ziraat-bankasi",
+      "name": "Ziraat Bankası",
+      "type": "mevduat",
+      "productName": "Günlük Kazanan Hesap",
+      "website": "https://www.ziraatbank.com.tr",
+      "url": "https://www.ziraatbank.com.tr/tr/bireysel/mevduat/vadeli-hesaplar/vadeli-tl-mevduat-hesaplari/gunluk-kazanan-hesap",
+      "tiers": [
+        {
+          "min": 0,
+          "max": 34999,
+          "annualRate": 4.5,
+          "nib": 15000
+        },
+        {
+          "min": 35000,
+          "max": 99999,
+          "annualRate": 25,
+          "nib": 20000
+        },
+        {
+          "min": 100000,
+          "max": 249999,
+          "annualRate": 28,
+          "nib": 50000
+        },
+        {
+          "min": 250000,
+          "max": 499999,
+          "annualRate": 31,
+          "nib": 75000
+        },
+        {
+          "min": 500000,
+          "max": 999999,
+          "annualRate": 32,
+          "nib": 200000
+        },
+        {
+          "min": 1000000,
+          "max": 2999999,
+          "annualRate": 35,
+          "nib": 500000
+        },
+        {
+          "min": 3000000,
+          "max": 9999999,
+          "annualRate": 36,
+          "nib": 1250000
+        },
+        {
+          "min": 10000000,
+          "max": 19999999,
+          "annualRate": 37,
+          "nib": 3000000
+        },
+        {
+          "min": 20000000,
+          "max": 49999999,
+          "annualRate": 37,
+          "nib": 5000000
+        },
+        {
+          "min": 50000000,
+          "max": 100000000,
+          "annualRate": 37,
+          "nib": 10000000
+        }
+      ]
+    },
+    {
+      "id": "enpara",
+      "name": "Enpara",
+      "type": "mevduat",
+      "productName": "Birikim Hesabı",
+      "website": "https://www.enpara.com",
+      "url": "https://www.enpara.com/hesaplar/birikim-hesabi",
+      "tiers": [
+        {
+          "min": 0,
+          "max": 150000,
+          "annualRate": 28,
+          "nib": 0
+        },
+        {
+          "min": 150000,
+          "max": 750000,
+          "annualRate": 33.5,
+          "nib": 0
+        },
+        {
+          "min": 750000,
+          "max": 1500000,
+          "annualRate": 35,
+          "nib": 0
+        },
+        {
+          "min": 1500000,
+          "max": null,
+          "annualRate": 36,
+          "nib": 0
+        }
+      ]
+    },
+    {
+      "id": "tom-bank",
+      "name": "TOM Bank",
+      "type": "katilim",
+      "productName": "Mega Günlük Hesap",
+      "website": "https://tombank.com.tr",
+      "url": "https://tombank.com.tr/mega-gunluk-hesap.html",
+      "tiers": [
+        {
+          "min": 0,
+          "max": 99999.99,
+          "annualRate": 44,
+          "nib": 15000
+        },
+        {
+          "min": 100000,
+          "max": 249999.99,
+          "annualRate": 44.5,
+          "nib": 35000
+        },
+        {
+          "min": 250000,
+          "max": 499999.99,
+          "annualRate": 45,
+          "nib": 75000
+        },
+        {
+          "min": 500000,
+          "max": 999999.99,
+          "annualRate": 45.5,
+          "nib": 175000
+        },
+        {
+          "min": 1000000,
+          "max": 1499999.99,
+          "annualRate": 46,
+          "nib": 350000
+        },
+        {
+          "min": 1500000,
+          "max": 2499999.99,
+          "annualRate": 45.5,
+          "nib": 500000
+        },
+        {
+          "min": 2500000,
+          "max": 4999999.99,
+          "annualRate": 44.5,
+          "nib": 750000
+        },
+        {
+          "min": 5000000,
+          "max": 9999999.99,
+          "annualRate": 43,
+          "nib": 1000000
+        },
+        {
+          "min": 10000000,
+          "max": 25000000,
+          "annualRate": 42,
+          "nib": 2000000
+        }
+      ]
+    },
+    {
+      "id": "getir-finans",
+      "name": "Getir Finans",
+      "type": "mevduat",
+      "productName": "Günlük Hesap",
+      "website": "https://www.getirfinans.com",
+      "url": "https://www.getirfinans.com/hesap/",
+      "tiers": [
+        {
+          "min": 2500,
+          "max": 25000,
+          "annualRate": 42,
+          "nib": 2500
+        },
+        {
+          "min": 25001,
+          "max": 50000,
+          "annualRate": 42,
+          "nib": 7500
+        },
+        {
+          "min": 50001,
+          "max": 100000,
+          "annualRate": 42,
+          "nib": 15000
+        },
+        {
+          "min": 100001,
+          "max": 250000,
+          "annualRate": 42,
+          "nib": 30000
+        },
+        {
+          "min": 250001,
+          "max": 500000,
+          "annualRate": 42,
+          "nib": 50000
+        },
+        {
+          "min": 500001,
+          "max": 1000000,
+          "annualRate": 42,
+          "nib": 80000
+        },
+        {
+          "min": 1000001,
+          "max": 2000000,
+          "annualRate": 42,
+          "nib": 175000
+        },
+        {
+          "min": 2000001,
+          "max": 3000000,
+          "annualRate": 42,
+          "nib": 300000
+        },
+        {
+          "min": 3000001,
+          "max": 3400000,
+          "annualRate": 42,
+          "nib": 400000
+        },
+        {
+          "min": 3400001,
+          "max": 5400000,
+          "annualRate": 30,
+          "nib": 400000
+        },
+        {
+          "min": 5400001,
+          "max": null,
+          "annualRate": 30,
+          "nib": 400000
+        }
+      ]
+    }
+  ]
+}

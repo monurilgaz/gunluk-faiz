@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Günlük Faiz - Banka Mevduat Faiz Oranları</title>
+    <meta name="description" content="Türkiye'deki bankaların günlük mevduat faiz oranları ve net getiri hesaplayıcı.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <h1>Günlük Faiz</h1>
+                <span class="logo-subtitle">Mevduat Faiz Oranları</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">
+                <span class="theme-icon-light">☀️</span>
+                <span class="theme-icon-dark">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Summary Cards -->
+        <section class="summary-cards" id="summaryCards">
+            <div class="card summary-card highlight">
+                <div class="card-label">En Yüksek Faiz</div>
+                <div class="card-value" id="highestRate">-</div>
+                <div class="card-detail" id="highestBank">-</div>
+            </div>
+            <div class="card summary-card">
+                <div class="card-label">Ortalama Oran</div>
+                <div class="card-value" id="averageRate">-</div>
+                <div class="card-detail">Tüm bankalar</div>
+            </div>
+            <div class="card summary-card">
+                <div class="card-label">Günlük Net Getiri</div>
+                <div class="card-value" id="dailyReturn">-</div>
+                <div class="card-detail" id="dailyReturnDetail">100.000₺ için (en yüksek)</div>
+            </div>
+            <div class="card summary-card">
+                <div class="card-label">Son Güncelleme</div>
+                <div class="card-value" id="lastUpdated">-</div>
+                <div class="card-detail" id="bankCount">- banka</div>
+            </div>
+        </section>
+
+        <!-- Filters & Search -->
+        <section class="filters-bar">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Banka ara..." aria-label="Banka ara">
+            </div>
+            <div class="principal-input-group">
+                <label for="tablePrincipal">Ana Para:</label>
+                <input type="text" id="tablePrincipal" value="100.000" inputmode="numeric" aria-label="Ana para">
+                <span>₺</span>
+            </div>
+        </section>
+
+        <!-- Rates Table -->
+        <section class="table-section">
+            <div class="table-wrapper">
+                <table class="rates-table" id="ratesTable">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-sort="name">
+                                Banka Adı <span class="sort-icon">↕</span>
+                            </th>
+                            <th class="sortable sorted-desc" data-sort="rate">
+                                Yıllık Oran <span class="sort-icon">↓</span>
+                            </th>
+                            <th class="sortable" data-sort="nib">
+                                Faiz Dışı Bakiye <span class="sort-icon">↕</span>
+                            </th>
+                            <th class="sortable" data-sort="daily">
+                                Günlük Net Getiri <span class="sort-icon">↕</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="ratesBody">
+                    </tbody>
+                </table>
+            </div>
+            <!-- Mobile card view -->
+            <div class="mobile-cards" id="mobileCards"></div>
+        </section>
+
+        <!-- Calculator -->
+        <section class="calculator-section" id="calculator">
+            <h2>Net Getiri Hesaplayıcı</h2>
+            <div class="calculator-grid">
+                <div class="calc-inputs card">
+                    <div class="form-group">
+                        <label for="principal">Ana Para (₺)</label>
+                        <input type="text" id="principal" value="100.000" inputmode="numeric" placeholder="100.000">
+                    </div>
+                    <div class="form-group">
+                        <label for="withholdingRate">Stopaj Oranı (%)</label>
+                        <input type="number" id="withholdingRate" value="17.5" step="0.1" min="0" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="bankSelect">Banka Seçimi</label>
+                        <select id="bankSelect">
+                            <option value="">Banka seçin...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="customRate">veya Oran Girin (%)</label>
+                        <input type="number" id="customRate" step="0.1" min="0" max="100" placeholder="Özel oran">
+                    </div>
+                    <div class="form-group" id="customNibGroup" style="display:none">
+                        <label for="customNib">Faiz Dışı Bakiye (₺)</label>
+                        <input type="text" id="customNib" value="0" inputmode="numeric" placeholder="0">
+                    </div>
+                    <button class="btn btn-primary" id="calcBtn">Hesapla</button>
+                </div>
+                <div class="calc-results card">
+                    <h3>Sonuçlar</h3>
+                    <p class="nib-info" id="resultNibInfo" style="display:none"></p>
+                    <div class="result-row">
+                        <span class="result-label">Yıllık Brüt Oran</span>
+                        <span class="result-value" id="resultAnnualRate">-</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Günlük Brüt Getiri</span>
+                        <span class="result-value" id="resultDailyGross">-</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Günlük Stopaj</span>
+                        <span class="result-value negative" id="resultDailyTax">-</span>
+                    </div>
+                    <div class="result-row highlight-row">
+                        <span class="result-label">Günlük Net Getiri</span>
+                        <span class="result-value" id="resultDailyNet">-</span>
+                    </div>
+                    <hr>
+                    <div class="result-row">
+                        <span class="result-label">Aylık Net Getiri (30 gün)</span>
+                        <span class="result-value" id="resultMonthlyNet">-</span>
+                    </div>
+                    <div class="result-row highlight-row">
+                        <span class="result-label">Yıllık Net Getiri</span>
+                        <span class="result-value" id="resultYearlyNet">-</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Yıl Sonu Toplam</span>
+                        <span class="result-value" id="resultTotal">-</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Veriler bilgi amaçlıdır, yatırım tavsiyesi değildir. Güncel oranlar için bankaların resmi sitelerini ziyaret edin.</p>
+            <p>Banka listesi <a href="https://www.bddk.org.tr" target="_blank" rel="noopener">BDDK</a> kaynaklıdır. Stopaj oranı: %17,5</p>
+            <p class="footer-update">Son güncelleme: <span id="footerUpdate">-</span></p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-card">
+            <div class="loading-spinner"></div>
+            <h3 class="loading-title">Veriler yükleniyor</h3>
+            <div class="loading-progress">
+                <div class="loading-progress-bar" id="loadingProgressBar"></div>
+            </div>
+            <p class="loading-status" id="loadingStatus">Banka verileri çekiliyor...</p>
+        </div>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

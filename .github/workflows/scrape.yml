@@ -1,0 +1,40 @@
+name: Scrape Bank Rates
+
+on:
+  schedule:
+    # Every day at 06:00 UTC (09:00 Turkey time)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: scraper
+        run: npm install
+
+      - name: Run scraper
+        working-directory: scraper
+        run: node scrape.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/rates.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update rates - $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

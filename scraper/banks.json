@@ -1,0 +1,221 @@
+{
+  "defaultWithholdingRate": 17.5,
+  "banks": [
+    {
+      "id": "akbank",
+      "name": "Akbank",
+      "type": "mevduat",
+      "productName": "Serbest Plus Hesap",
+      "url": "https://www.akbank.com/mevduat-yatirim/mevduat/vadeli-mevduat-hesaplari/serbest-plus-hesap",
+      "apiUrl": "https://www.akbank.com/_layouts/15/Akbank/CalcTools/Ajax.aspx/GetMevduatFaiz",
+      "website": "https://www.akbank.com",
+      "scrapeType": "api",
+      "enabled": true
+    },
+    {
+      "id": "alternatifbank",
+      "name": "Alternatifbank",
+      "type": "mevduat",
+      "productName": "VOV Hesap",
+      "url": "https://www.alternatifbank.com.tr/bireysel/mevduat/vadeli-mevduat/vov-hesap#faizorani",
+      "website": "https://www.alternatifbank.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "anadolubank",
+      "name": "Anadolubank",
+      "type": "mevduat",
+      "productName": "Renkli Hesap",
+      "url": "https://www.anadolubank.com.tr/sizin-icin/birikim-ve-mevduat/renkli-hesap",
+      "website": "https://www.anadolubank.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "burgan-bank",
+      "name": "Burgan Bank",
+      "type": "mevduat",
+      "productName": "ON Plus Hesap",
+      "url": "https://on.com.tr/hesaplar/on-plus",
+      "website": "https://on.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "denizbank",
+      "name": "Denizbank",
+      "type": "mevduat",
+      "productName": "Kaptan Hesap",
+      "url": "https://www.denizbank.com/hesap/kaptan",
+      "website": "https://www.denizbank.com",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "fibabanka",
+      "name": "Fibabanka",
+      "type": "mevduat",
+      "productName": "Kiraz Hesap",
+      "url": "https://www.fibabanka.com.tr/mevduat/kiraz-hesap",
+      "website": "https://www.fibabanka.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "garanti-bbva",
+      "name": "Garanti BBVA",
+      "type": "mevduat",
+      "productName": "e-Vadeli Hesap",
+      "url": "https://www.garantibbva.com.tr/mevduat/vadeli-tl-hesabi",
+      "apiUrl": "https://www.garantibbva.com.tr/proxy/novaform/ratesandfees/e-time-deposit-rates-tr",
+      "website": "https://www.garantibbva.com.tr",
+      "scrapeType": "api",
+      "enabled": true
+    },
+    {
+      "id": "halkbank",
+      "name": "Halkbank",
+      "type": "mevduat",
+      "productName": "e-Vadeli Mevduat",
+      "url": "https://www.halkbank.com.tr/tr/bireysel/mevduat/mevduat-faiz-oranlari/vadeli-tl-mevduat-faiz-oranlari",
+      "apiUrl": "https://webapi.halkbank.com.tr/api/deposit/depositinterestrates/",
+      "website": "https://www.halkbank.com.tr",
+      "scrapeType": "api",
+      "enabled": true
+    },
+    {
+      "id": "hsbc",
+      "name": "HSBC",
+      "type": "mevduat",
+      "productName": "Modern Hesap",
+      "url": "https://www.hsbc.com.tr/gunluk-bankacilik/mevduat-urunleri/faiz-oranlari",
+      "apiUrl": "https://www.hsbc.com.tr/api/InterestRate/getByType?type=4",
+      "website": "https://www.hsbc.com.tr",
+      "scrapeType": "api",
+      "enabled": true
+    },
+    {
+      "id": "ing",
+      "name": "ING",
+      "type": "mevduat",
+      "productName": "Turuncu Hesap",
+      "url": "https://www.ing.com.tr/tr/sizin-icin/mevduat/ing-turuncu-hesap",
+      "website": "https://www.ing.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "is-bankasi",
+      "name": "İş Bankası",
+      "type": "mevduat",
+      "productName": "Günlük Kazandıran Hesap",
+      "url": "https://www.isbank.com.tr/gunluk-kazandiran-hesap-faiz-oranlari",
+      "apiUrl": "https://www.isbank.com.tr/_vti_bin/DV.Isbank/PriceAndRate/PriceAndRateService.svc/GetDailyDepositRate?Lang=tr&ChannelType=ISCEP&CurrencyCode=TRY",
+      "website": "https://www.isbank.com.tr",
+      "scrapeType": "api",
+      "enabled": true
+    },
+    {
+      "id": "odeabank",
+      "name": "Odeabank",
+      "type": "mevduat",
+      "productName": "Oksijen Hesap",
+      "url": "https://www.odeabank.com.tr/bireysel/mevduat/oksijen-hesap/oksijen-hesap-faiz-oranlari",
+      "website": "https://www.odeabank.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "qnb-finansbank",
+      "name": "QNB Finansbank",
+      "type": "mevduat",
+      "productName": "Kazandıran Günlük Hesap",
+      "url": "https://www.qnb.com.tr/kazandiran-gunluk-hesap",
+      "website": "https://www.qnbfinansbank.com",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "sekerbank",
+      "name": "Şekerbank",
+      "type": "mevduat",
+      "productName": "Gece Gündüz Hesabı",
+      "url": "https://www.sekerbank.com.tr/mevduat-ve-yatirim-urunleri/mevduat-urunleri/vadeli-mevduat/gece-gunduz-hesabi",
+      "website": "https://www.sekerbank.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "teb",
+      "name": "TEB",
+      "type": "mevduat",
+      "productName": "Marifetli Hesap",
+      "url": "https://www.cepteteb.com.tr/hesaplama/marifetli-hesap-faiz-hesaplama",
+      "apiUrl": "https://www.cepteteb.com.tr/Services/GetCeptetebMarifetliTabela",
+      "website": "https://www.teb.com.tr",
+      "scrapeType": "api",
+      "enabled": true
+    },
+    {
+      "id": "vakifbank",
+      "name": "VakıfBank",
+      "type": "mevduat",
+      "productName": "Arı Hesabı",
+      "url": "https://www.vakifbank.com.tr/tr/bireysel/hesaplar/vadeli-hesaplar/ari-hesabi",
+      "website": "https://www.vakifbank.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "yapi-kredi",
+      "name": "Yapı Kredi",
+      "type": "mevduat",
+      "productName": "Sınırsız Hesap",
+      "url": "https://www.yapikredi.com.tr/bireysel-bankacilik/mevduat-urunleri/sinirsiz-hesap",
+      "website": "https://www.yapikredi.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "ziraat-bankasi",
+      "name": "Ziraat Bankası",
+      "type": "mevduat",
+      "productName": "Günlük Kazanan Hesap",
+      "url": "https://www.ziraatbank.com.tr/tr/bireysel/mevduat/vadeli-hesaplar/vadeli-tl-mevduat-hesaplari/gunluk-kazanan-hesap",
+      "website": "https://www.ziraatbank.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "enpara",
+      "name": "Enpara",
+      "type": "mevduat",
+      "productName": "Birikim Hesabı",
+      "url": "https://www.enpara.com/hesaplar/birikim-hesabi",
+      "website": "https://www.enpara.com",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "tom-bank",
+      "name": "TOM Bank",
+      "type": "katilim",
+      "productName": "Mega Günlük Hesap",
+      "url": "https://tombank.com.tr/mega-gunluk-hesap.html",
+      "website": "https://tombank.com.tr",
+      "scrapeType": "static",
+      "enabled": true
+    },
+    {
+      "id": "getir-finans",
+      "name": "Getir Finans",
+      "type": "mevduat",
+      "productName": "Günlük Hesap",
+      "url": "https://www.getirfinans.com/hesap/",
+      "website": "https://www.getirfinans.com",
+      "scrapeType": "static",
+      "enabled": true
+    }
+  ]
+}
