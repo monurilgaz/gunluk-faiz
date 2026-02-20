@@ -8,6 +8,42 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Live Currency Ticker -->
+    <div class="ticker-bar" id="tickerBar">
+        <div class="ticker-items" id="tickerItems">
+            <div class="ticker-item" data-cid="1">
+                <span class="ticker-name">USD</span>
+                <span class="ticker-price" id="tick-1">-</span>
+                <span class="ticker-change" id="tick-chg-1"></span>
+            </div>
+            <div class="ticker-item" data-cid="50">
+                <span class="ticker-name">EUR</span>
+                <span class="ticker-price" id="tick-50">-</span>
+                <span class="ticker-change" id="tick-chg-50"></span>
+            </div>
+            <div class="ticker-item" data-cid="100">
+                <span class="ticker-name">GBP</span>
+                <span class="ticker-price" id="tick-100">-</span>
+                <span class="ticker-change" id="tick-chg-100"></span>
+            </div>
+            <div class="ticker-item" data-cid="32">
+                <span class="ticker-name">Gram Altın</span>
+                <span class="ticker-price" id="tick-32">-</span>
+                <span class="ticker-change" id="tick-chg-32"></span>
+            </div>
+            <div class="ticker-item" data-cid="12">
+                <span class="ticker-name">ONS</span>
+                <span class="ticker-price" id="tick-12">-</span>
+                <span class="ticker-change" id="tick-chg-12"></span>
+            </div>
+            <div class="ticker-item" data-cid="62">
+                <span class="ticker-name">BTC</span>
+                <span class="ticker-price" id="tick-62">-</span>
+                <span class="ticker-change" id="tick-chg-62"></span>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container header-inner">
@@ -176,6 +212,7 @@
     </div>
 
     <script src="js/theme.js"></script>
+    <script src="js/ticker.js"></script>
     <script src="js/calculator.js"></script>
     <script src="js/app.js"></script>
 </body>

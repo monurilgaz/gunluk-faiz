@@ -75,13 +75,95 @@ a:hover {
     text-decoration: underline;
 }
 
+/* ===== Live Ticker ===== */
+.ticker-bar {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.ticker-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.ticker-items {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    min-width: min-content;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    white-space: nowrap;
+    border-right: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.ticker-item:last-child {
+    border-right: none;
+}
+
+.ticker-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.ticker-price {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+    transition: color 0.3s ease;
+}
+
+.ticker-change {
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.tick-up {
+    color: var(--success);
+}
+
+.tick-down {
+    color: var(--danger);
+}
+
+.tick-flash-up {
+    animation: flashUp 0.6s ease;
+}
+
+.tick-flash-down {
+    animation: flashDown 0.6s ease;
+}
+
+@keyframes flashUp {
+    0%, 100% { color: var(--text-primary); }
+    30% { color: var(--success); }
+}
+
+@keyframes flashDown {
+    0%, 100% { color: var(--text-primary); }
+    30% { color: var(--danger); }
+}
+
 /* ===== Header ===== */
 .header {
     background: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
     box-shadow: var(--shadow);
 }
 
