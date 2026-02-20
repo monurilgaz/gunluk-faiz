@@ -8,7 +8,8 @@ const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
 
-const TIMEOUT = 20000;
+const TIMEOUT = 30000;
+const MAX_RETRIES = 2;
 
 // ===== HTTP Helpers =====
 
@@ -601,7 +602,8 @@ const htmlParsers = {
 
 // ===== Main =====
 
-async function scrapeBank(bank) {
+async function scrapeBank(bank, attempt) {
+    attempt = attempt || 1;
     try {
         if (apiParsers[bank.id] && bank.apiUrl) {
             return await apiParsers[bank.id](bank);
@@ -612,6 +614,11 @@ async function scrapeBank(bank) {
         }
         return null;
     } catch (e) {
+        if (attempt < MAX_RETRIES) {
+            console.log('  RETRY ' + bank.id + ' (' + e.message + ')');
+            await new Promise(r => setTimeout(r, 3000));
+            return scrapeBank(bank, attempt + 1);
+        }
         console.log('  ERROR ' + bank.id + ': ' + e.message);
         return null;
     }
