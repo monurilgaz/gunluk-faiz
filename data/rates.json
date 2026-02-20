@@ -717,7 +717,104 @@
       "productName": "Oksijen Hesap",
       "website": "https://www.odeabank.com.tr",
       "url": "https://www.odeabank.com.tr/bireysel/mevduat/oksijen-hesap/oksijen-hesap-faiz-oranlari",
-      "tiers": []
+      "tiers": [
+        {
+          "min": 0,
+          "max": 25000,
+          "annualRate": 44,
+          "nib": 7500
+        },
+        {
+          "min": 25000.01,
+          "max": 50000,
+          "annualRate": 44,
+          "nib": 7500
+        },
+        {
+          "min": 50000.01,
+          "max": 100000,
+          "annualRate": 44,
+          "nib": 10000
+        },
+        {
+          "min": 100000.01,
+          "max": 250000,
+          "annualRate": 44,
+          "nib": 20000
+        },
+        {
+          "min": 250000.01,
+          "max": 500000,
+          "annualRate": 44,
+          "nib": 40000
+        },
+        {
+          "min": 500000.01,
+          "max": 750000,
+          "annualRate": 44,
+          "nib": 75000
+        },
+        {
+          "min": 750000.01,
+          "max": 1000000,
+          "annualRate": 44,
+          "nib": 125000
+        },
+        {
+          "min": 1000000.01,
+          "max": 2000000,
+          "annualRate": 44,
+          "nib": 200000
+        },
+        {
+          "min": 2000000.01,
+          "max": 3000000,
+          "annualRate": 44,
+          "nib": 350000
+        },
+        {
+          "min": 3000000.01,
+          "max": 4000000,
+          "annualRate": 44,
+          "nib": 450000
+        },
+        {
+          "min": 4000000.01,
+          "max": 5000000,
+          "annualRate": 44,
+          "nib": 600000
+        },
+        {
+          "min": 5000000.01,
+          "max": 6000000,
+          "annualRate": 44,
+          "nib": 750000
+        },
+        {
+          "min": 6000000.01,
+          "max": 7000000,
+          "annualRate": 44,
+          "nib": 900000
+        },
+        {
+          "min": 7000000.01,
+          "max": 10000000,
+          "annualRate": 44,
+          "nib": 1000000
+        },
+        {
+          "min": 10000000.01,
+          "max": 20000000,
+          "annualRate": 43,
+          "nib": 1500000
+        },
+        {
+          "min": 20000000.01,
+          "max": 25000000,
+          "annualRate": 13.5,
+          "nib": 2000000
+        }
+      ]
     },
     {
       "id": "qnb-finansbank",

@@ -624,6 +624,17 @@ async function main() {
     const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
     const banks = config.banks.filter(b => b.enabled);
 
+    // Load existing data to preserve tiers on scrape failure
+    let existingBanks = {};
+    if (fs.existsSync(outputPath)) {
+        try {
+            const existing = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+            for (const b of (existing.banks || [])) {
+                if (b.tiers && b.tiers.length > 0) existingBanks[b.id] = b.tiers;
+            }
+        } catch (e) { /* ignore parse errors */ }
+    }
+
     console.log('Scraping ' + banks.length + ' banks...\n');
 
     const results = [];
@@ -641,11 +652,16 @@ async function main() {
             });
             success++;
         } else {
-            console.log('FAILED');
+            const prev = existingBanks[bank.id];
+            if (prev) {
+                console.log('FAILED (keeping previous data)');
+            } else {
+                console.log('FAILED');
+            }
             results.push({
                 id: bank.id, name: bank.name, type: bank.type,
                 productName: bank.productName, website: bank.website || bank.url,
-                url: bank.url, tiers: []
+                url: bank.url, tiers: prev || []
             });
         }
     }
