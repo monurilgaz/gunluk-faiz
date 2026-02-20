@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-20T12:12:34.351Z",
+  "lastUpdated": "2026-02-20T12:16:33.642Z",
   "defaultWithholdingRate": 17.5,
   "banks": [
     {
@@ -140,73 +140,73 @@
         {
           "min": 1000,
           "max": 49999,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 2500
         },
         {
           "min": 50000,
           "max": 99999,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 5000
         },
         {
           "min": 100000,
           "max": 249999,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 12500
         },
         {
           "min": 250000,
           "max": 499999,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 25000
         },
         {
           "min": 500000,
           "max": 999999,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 50000
         },
         {
           "min": 1000000,
           "max": 1999999,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 90000
         },
         {
           "min": 2000000,
           "max": 2999999,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 200000
         },
         {
           "min": 3000000,
           "max": 3999999,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 300000
         },
         {
           "min": 4000000,
           "max": 4999999,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 400000
         },
         {
           "min": 5000000,
           "max": 6999999,
-          "annualRate": 42,
+          "annualRate": 43,
           "nib": 600000
         },
         {
           "min": 7000000,
           "max": 8499999,
-          "annualRate": 42,
+          "annualRate": 43,
           "nib": 700000
         },
         {
           "min": 8500000,
           "max": 10000000,
-          "annualRate": 42,
+          "annualRate": 43,
           "nib": 900000
         }
       ]

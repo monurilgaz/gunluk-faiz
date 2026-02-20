@@ -450,6 +450,16 @@ const htmlParsers = {
             if (text.indexOf('TL') >= 0 && text.indexOf('RENKLİ HESAP') >= 0 && text.indexOf('Dijital') >= 0) { table = t; break; }
         }
         if (!table) return null;
+        // Find "Görüntülü Görüşme" column index from headers
+        let rateCol = 3; // default: Dijital
+        for (const tr of table.querySelectorAll('tr')) {
+            const ths = tr.querySelectorAll('th');
+            if (ths.length < 4) continue;
+            for (let i = 0; i < ths.length; i++) {
+                if (ths[i].textContent.indexOf('ntülü') >= 0) { rateCol = i; break; }
+            }
+            if (rateCol !== 3) break;
+        }
         const tiers = [];
         for (const row of table.querySelectorAll('tr')) {
             const cells = row.querySelectorAll('td');
@@ -457,7 +467,7 @@ const htmlParsers = {
             const range = parseRange(cells[0].textContent);
             if (!range) continue;
             const nib = parseNumber(cells[1].textContent);
-            const rate = parseRate(cells[3].textContent);
+            const rate = parseRate(cells[rateCol].textContent) || parseRate(cells[3].textContent);
             if (rate > 0) tiers.push({ min: range.min, max: range.max, annualRate: rate, nib });
         }
         return tiers.length > 0 ? { tiers } : null;
