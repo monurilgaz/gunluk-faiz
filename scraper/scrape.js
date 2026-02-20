@@ -464,6 +464,31 @@ const htmlParsers = {
     },
 
     'qnb-finansbank': (doc) => {
+        // QNB uses mixed number formats (commas/dots as thousands separators)
+        function parseQNBAmount(str) {
+            str = (str || '').replace(/[^\d.,]/g, '').trim();
+            if (!str) return 0;
+            // Normalize: replace all commas with dots, then decide which is decimal
+            str = str.replace(/,/g, '.');
+            const parts = str.split('.');
+            if (parts.length <= 1) return parseFloat(str) || 0;
+            const last = parts[parts.length - 1];
+            if (last.length <= 2) {
+                // Last segment is decimal (e.g. "7.500.00" → 7500.00, "499.999.99" → 499999.99)
+                return parseFloat(parts.slice(0, -1).join('') + '.' + last) || 0;
+            }
+            // All segments are thousands groups (e.g. "49.999" → 49999)
+            return parseFloat(parts.join('')) || 0;
+        }
+        function parseQNBRange(str) {
+            str = (str || '').replace(/<[^>]*>/g, '').trim().replace(/TL/gi, '').trim();
+            const mOpen = str.match(/([\d.,]+)\s*[-–]?\s*(?:ve\s+)?[üu]zeri/i) || str.match(/([\d.,]+)\s*\+/);
+            if (mOpen) return { min: parseQNBAmount(mOpen[1]), max: null };
+            const m = str.match(/([\d.,]+)\s*[-–]\s*([\d.,]+)/);
+            if (!m) return null;
+            return { min: parseQNBAmount(m[1]), max: parseQNBAmount(m[2]) };
+        }
+
         let rateTable = null, nibTable = null;
         for (const t of doc.querySelectorAll('table')) {
             const text = t.textContent;
@@ -471,26 +496,39 @@ const htmlParsers = {
             if (!nibTable && text.indexOf('Alt Limit') >= 0 && text.indexOf('Tutar') >= 0) nibTable = t;
         }
         if (!rateTable) return null;
-        const nibLookup = [];
+        // Parse NIB table with ranges (more granular than rate table)
+        const nibRanges = [];
         if (nibTable) for (const row of nibTable.querySelectorAll('tr')) {
             const cells = row.querySelectorAll('td');
             if (cells.length < 2) continue;
-            nibLookup.push(parseFloat(cells[1].textContent.trim().replace(/,/g, '')) || 0);
+            const range = parseQNBRange(cells[0].textContent);
+            if (!range) continue;
+            const nib = parseQNBAmount(cells[1].textContent);
+            nibRanges.push({ min: range.min, max: range.max, nib });
         }
-        const tiers = [];
-        let idx = 0;
+        // Parse rate table
+        const rateTiers = [];
         for (const row of rateTable.querySelectorAll('tr')) {
             const cells = row.querySelectorAll('td');
             if (cells.length < 2) continue;
-            const rs = cells[0].textContent.trim();
-            const m = rs.match(/([\d,]+\.?\d*)\s*[-–]\s*([\d,]+\.?\d*)/);
-            if (!m) continue;
-            const mn = parseFloat(m[1].replace(/,/g, '')) || 0;
-            const mx = parseFloat(m[2].replace(/,/g, '')) || 0;
+            const range = parseQNBRange(cells[0].textContent);
+            if (!range) continue;
             const rate = parseFloat(cells[1].textContent.trim().replace('%', '').trim()) || 0;
-            const nib = idx < nibLookup.length ? nibLookup[idx] : 0;
-            idx++;
-            if (rate > 0) tiers.push({ min: mn, max: mx, annualRate: rate, nib });
+            if (rate > 0) rateTiers.push({ min: range.min, max: range.max, annualRate: rate });
+        }
+        if (rateTiers.length === 0) return null;
+        // Merge: use NIB ranges as base (finer granularity), find matching rate for each
+        const tiers = [];
+        if (nibRanges.length > 0) {
+            for (const nb of nibRanges) {
+                const mid = (nb.min + (nb.max || nb.min)) / 2;
+                const rt = rateTiers.find(r => mid >= r.min && (r.max === null || mid <= r.max));
+                if (rt) tiers.push({ min: nb.min, max: nb.max, annualRate: rt.annualRate, nib: nb.nib });
+            }
+        }
+        // Fallback: if NIB table missing or produced no results, use rate tiers without NIB
+        if (tiers.length === 0) {
+            for (const rt of rateTiers) tiers.push({ min: rt.min, max: rt.max, annualRate: rt.annualRate, nib: 0 });
         }
         return tiers.length > 0 ? { tiers } : null;
     },

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-20T07:04:50.374Z",
+  "lastUpdated": "2026-02-20T12:12:34.351Z",
   "defaultWithholdingRate": 17.5,
   "banks": [
     {
@@ -825,52 +825,58 @@
       "url": "https://www.qnb.com.tr/kazandiran-gunluk-hesap",
       "tiers": [
         {
-          "min": 7500,
-          "max": 49999.99,
+          "min": 0,
+          "max": 49999,
           "annualRate": 42,
           "nib": 7500
         },
         {
           "min": 50000,
-          "max": 99999.99,
+          "max": 99999,
           "annualRate": 42,
           "nib": 10000
         },
         {
           "min": 100000,
-          "max": 49999999,
+          "max": 249999,
           "annualRate": 42,
           "nib": 15000
         },
         {
-          "min": 500000,
-          "max": 999999.99,
+          "min": 250000,
+          "max": 499999,
           "annualRate": 42,
           "nib": 30000
         },
         {
-          "min": 1000000,
-          "max": 2499999.99,
+          "min": 500000,
+          "max": 999999,
           "annualRate": 42,
           "nib": 60000
         },
         {
-          "min": 2500000,
-          "max": 4999999.99,
+          "min": 1000000,
+          "max": 2499999,
           "annualRate": 42,
           "nib": 150000
         },
         {
-          "min": 5000000,
-          "max": 9999999.99,
+          "min": 2500000,
+          "max": 4999999,
           "annualRate": 42,
           "nib": 300000
         },
         {
-          "min": 10000000,
-          "max": 29999999.99,
-          "annualRate": 30.5,
+          "min": 5000000,
+          "max": 9999999,
+          "annualRate": 42,
           "nib": 600000
+        },
+        {
+          "min": 10000000,
+          "max": null,
+          "annualRate": 30.5,
+          "nib": 1000000
         }
       ]
     },
