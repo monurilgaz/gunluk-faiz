@@ -277,6 +277,28 @@
         });
     }
 
+    // ===== Mobile Sort =====
+    function initMobileSort() {
+        var select = document.getElementById('mobileSortSelect');
+        select.addEventListener('change', function () {
+            var parts = this.value.split('-');
+            state.sortField = parts[0];
+            state.sortDir = parts[1];
+
+            // Sync desktop header icons
+            document.querySelectorAll('.rates-table th.sortable').forEach(function (h) {
+                h.classList.remove('sorted-asc', 'sorted-desc');
+                h.querySelector('.sort-icon').textContent = '↕';
+                if (h.getAttribute('data-sort') === state.sortField) {
+                    h.classList.add(state.sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+                    h.querySelector('.sort-icon').textContent = state.sortDir === 'asc' ? '↑' : '↓';
+                }
+            });
+
+            applyFilters();
+        });
+    }
+
     // ===== Search =====
     function initSearch() {
         var input = document.getElementById('searchInput');
@@ -430,6 +452,7 @@
     // ===== Init =====
     function init() {
         initSortHeaders();
+        initMobileSort();
         initSearch();
         initTablePrincipal();
         loadData();

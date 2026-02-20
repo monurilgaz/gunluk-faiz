@@ -458,7 +458,11 @@ a:hover {
     font-size: 0.9rem;
 }
 
-/* Mobile cards (hidden on desktop) */
+/* Mobile sort & cards (hidden on desktop) */
+.mobile-sort {
+    display: none;
+}
+
 .mobile-cards {
     display: none;
 }
@@ -697,9 +701,33 @@ a:hover {
         min-width: 100%;
     }
 
-    /* Hide desktop table, show mobile cards */
+    /* Hide desktop table, show mobile sort & cards */
     .table-wrapper {
         display: none;
+    }
+
+    .mobile-sort {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .mobile-sort label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        white-space: nowrap;
+    }
+
+    .mobile-sort select {
+        flex: 1;
+        padding: 8px 12px;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        font-size: 0.85rem;
     }
 
     .mobile-cards {

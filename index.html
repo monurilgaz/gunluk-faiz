@@ -119,7 +119,20 @@
                     </tbody>
                 </table>
             </div>
-            <!-- Mobile card view -->
+            <!-- Mobile sort & card view -->
+            <div class="mobile-sort" id="mobileSort">
+                <label for="mobileSortSelect">Sırala:</label>
+                <select id="mobileSortSelect">
+                    <option value="rate-desc">Faiz (Yüksek)</option>
+                    <option value="rate-asc">Faiz (Düşük)</option>
+                    <option value="daily-desc">Günlük Getiri (Yüksek)</option>
+                    <option value="daily-asc">Günlük Getiri (Düşük)</option>
+                    <option value="name-asc">Banka Adı (A-Z)</option>
+                    <option value="name-desc">Banka Adı (Z-A)</option>
+                    <option value="nib-asc">Faiz Dışı (Düşük)</option>
+                    <option value="nib-desc">Faiz Dışı (Yüksek)</option>
+                </select>
+            </div>
             <div class="mobile-cards" id="mobileCards"></div>
         </section>
 
