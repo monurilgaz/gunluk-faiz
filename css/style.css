@@ -424,6 +424,25 @@ a:hover {
     color: var(--text-muted);
 }
 
+.net-rate-value {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--success);
+}
+
+.net-rate-value.reduced {
+    color: var(--accent);
+}
+
+.mobile-card-value.net-rate {
+    font-weight: 700;
+    color: var(--success);
+}
+
+.mobile-card-value.net-rate.reduced {
+    color: var(--accent);
+}
+
 .nib-info {
     font-size: 0.82rem;
     color: var(--text-muted);

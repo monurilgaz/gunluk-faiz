@@ -75,7 +75,7 @@
                 console.error('Veri yuklenemedi:', err);
                 hideLoading();
                 document.getElementById('ratesBody').innerHTML =
-                    '<tr><td colspan="4" style="text-align:center;padding:40px;color:var(--text-muted)">Veri yuklenemedi. Lutfen sayfayi yenileyin.</td></tr>';
+                    '<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text-muted)">Veri yuklenemedi. Lutfen sayfayi yenileyin.</td></tr>';
             });
     }
 
@@ -87,6 +87,11 @@
     function bankRate(bank) {
         if (!bankHasRate(bank)) return 0;
         return Calculator.getRateForPrincipal(bank, state.tablePrincipal);
+    }
+
+    function bankNetRate(bank) {
+        if (!bankHasRate(bank)) return 0;
+        return Calculator.getNetRateForPrincipal(bank, state.tablePrincipal);
     }
 
     function bankDailyNet(bank) {
@@ -164,6 +169,10 @@
                     valA = Calculator.getNibForPrincipal(a, state.tablePrincipal);
                     valB = Calculator.getNibForPrincipal(b, state.tablePrincipal);
                     return state.sortDir === 'asc' ? valA - valB : valB - valA;
+                case 'netRate':
+                    valA = bankNetRate(a);
+                    valB = bankNetRate(b);
+                    return state.sortDir === 'asc' ? valA - valB : valB - valA;
                 case 'daily':
                     valA = bankDailyNet(a);
                     valB = bankDailyNet(b);
@@ -182,7 +191,7 @@
     function renderTable(banks) {
         var tbody = document.getElementById('ratesBody');
         if (!banks.length) {
-            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:40px;color:var(--text-muted)">Sonuc bulunamadi</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text-muted)">Sonuc bulunamadi</td></tr>';
             return;
         }
 
@@ -190,6 +199,7 @@
         banks.forEach(function (bank) {
             var failed = !bankHasRate(bank);
             var rate = failed ? 0 : bankRate(bank);
+            var netRate = failed ? 0 : bankNetRate(bank);
             var dailyNet = failed ? 0 : bankDailyNet(bank);
             var rowClass = failed ? ' class="scrape-failed"' : '';
 
@@ -197,12 +207,14 @@
                 '<td class="bank-name"><a href="' + bank.website + '" target="_blank" rel="noopener">' + bank.name + '</a></td>';
 
             if (failed) {
-                html += '<td class="rate-failed" colspan="3">Çekilemedi</td>';
+                html += '<td class="rate-failed" colspan="4">Çekilemedi</td>';
             } else {
                 var nib = Calculator.getNibForPrincipal(bank, state.tablePrincipal);
                 var nibText = nib > 0 ? nib.toLocaleString('tr-TR') + ' ₺' : '-';
+                var netRateClass = netRate < rate ? 'net-rate-value reduced' : 'net-rate-value';
                 html += '<td class="rate-value">%' + rate.toFixed(1) + '</td>' +
                     '<td class="nib-value">' + nibText + '</td>' +
+                    '<td class="' + netRateClass + '">%' + netRate.toFixed(1) + '</td>' +
                     '<td class="daily-net">' + Calculator.formatTL(dailyNet) + '</td>';
             }
 
@@ -226,6 +238,7 @@
             var rate = failed ? 0 : bankRate(bank);
             var dailyNet = failed ? 0 : bankDailyNet(bank);
             var nib = failed ? 0 : Calculator.getNibForPrincipal(bank, state.tablePrincipal);
+            var netRate = failed ? 0 : bankNetRate(bank);
             var nibText = nib > 0 ? nib.toLocaleString('tr-TR') + ' ₺' : '-';
             var principalLabel = state.tablePrincipal.toLocaleString('tr-TR');
             var cardClass = failed ? 'mobile-card scrape-failed' : 'mobile-card';
@@ -238,9 +251,11 @@
             if (failed) {
                 html += '<div class="mobile-card-failed">Çekilemedi</div>';
             } else {
+                var netRateCardClass = netRate < rate ? 'mobile-card-value net-rate reduced' : 'mobile-card-value net-rate';
                 html += '<div class="mobile-card-rows">' +
                     '<div class="mobile-card-row"><span class="mobile-card-label">Yıllık Oran</span><span class="mobile-card-value rate">%' + rate.toFixed(1) + '</span></div>' +
                     '<div class="mobile-card-row"><span class="mobile-card-label">Faiz Dışı</span><span class="mobile-card-value">' + nibText + '</span></div>' +
+                    '<div class="mobile-card-row"><span class="mobile-card-label">Net Oran</span><span class="' + netRateCardClass + '">%' + netRate.toFixed(1) + '</span></div>' +
                     '<div class="mobile-card-row"><span class="mobile-card-label">Günlük Net (' + principalLabel + ')</span><span class="mobile-card-value">' + Calculator.formatTL(dailyNet) + '</span></div>' +
                 '</div>';
             }

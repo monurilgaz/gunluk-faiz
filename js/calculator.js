@@ -130,6 +130,19 @@ var Calculator = (function () {
     }
 
     /**
+     * Get the net annual rate after accounting for non-interest balance.
+     * Net Rate = Annual Rate * (Principal - NIB) / Principal
+     */
+    function getNetRateForPrincipal(bank, principal) {
+        var rate = getRateForPrincipal(bank, principal);
+        var nib = getNibForPrincipal(bank, principal);
+        if (principal <= 0) return 0;
+        var effective = principal - nib;
+        if (effective <= 0) return 0;
+        return rate * effective / principal;
+    }
+
+    /**
      * Get the effective principal after subtracting non-interest balance.
      * Returns 0 if principal <= nib.
      */
@@ -174,6 +187,7 @@ var Calculator = (function () {
         formatInputTL: formatInputTL,
         getRateForPrincipal: getRateForPrincipal,
         getNibForPrincipal: getNibForPrincipal,
+        getNetRateForPrincipal: getNetRateForPrincipal,
         getEffectivePrincipal: getEffectivePrincipal
     };
 })();
