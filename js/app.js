@@ -495,7 +495,11 @@
             document.getElementById('resultDailyTax').textContent = '-' + Calculator.formatTL(result.dailyTax);
             document.getElementById('resultDailyNet').textContent = Calculator.formatTL(result.dailyNet);
             document.getElementById('resultMonthlyNet').textContent = Calculator.formatTL(result.monthlyNet);
+            var monthlyCompoundRate = effectivePrincipal > 0 ? (result.monthlyNet / effectivePrincipal) * 100 : 0;
+            document.getElementById('resultMonthlyCompoundRate').textContent = '%' + monthlyCompoundRate.toFixed(2);
             document.getElementById('resultYearlyNet').textContent = Calculator.formatTL(result.yearlyNet);
+            var yearlyCompoundRate = effectivePrincipal > 0 ? (result.yearlyNet / effectivePrincipal) * 100 : 0;
+            document.getElementById('resultYearlyCompoundRate').textContent = '%' + yearlyCompoundRate.toFixed(2);
             document.getElementById('resultTotal').textContent = Calculator.formatTL(principal + result.yearlyNet);
 
             var nibInfo = document.getElementById('resultNibInfo');
