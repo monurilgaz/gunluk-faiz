@@ -30,7 +30,12 @@
             state.favorites[bankId] = true;
         }
         saveFavorites();
-        applyFilters();
+        // Update star visuals without re-rendering/re-sorting to avoid
+        // ghost tap issues on mobile (DOM shifting under finger)
+        var active = !!state.favorites[bankId];
+        document.querySelectorAll('.fav-btn[data-fav="' + bankId + '"]').forEach(function (btn) {
+            btn.classList.toggle('fav-active', active);
+        });
     }
 
     function isFavorite(bankId) {
