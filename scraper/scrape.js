@@ -731,10 +731,62 @@ async function main() {
     fs.writeFileSync(outputPath, JSON.stringify(output, null, 2));
     console.log('\nDone! ' + success + '/' + banks.length + ' banks. Saved to data/rates.json');
 
+    updateHistory(results);
+
     if (success < banks.length / 2) {
         console.error('WARNING: Less than half of banks scraped successfully!');
         process.exit(1);
     }
+}
+
+function updateHistory(results) {
+    const historyPath = path.join(__dirname, '..', 'data', 'history.json');
+    let history = { dates: [], banks: {} };
+
+    if (fs.existsSync(historyPath)) {
+        try {
+            history = JSON.parse(fs.readFileSync(historyPath, 'utf8'));
+        } catch (e) { /* start fresh */ }
+    }
+
+    const today = new Date().toISOString().slice(0, 10);
+
+    if (history.dates.length > 0 && history.dates[history.dates.length - 1] === today) {
+        console.log('History already updated for ' + today);
+        return;
+    }
+
+    history.dates.push(today);
+
+    const STANDARD_PRINCIPAL = 100000;
+    for (const bank of results) {
+        if (!history.banks[bank.id]) {
+            history.banks[bank.id] = new Array(history.dates.length - 1).fill(null);
+        }
+        let rate = null;
+        if (bank.tiers && bank.tiers.length > 0) {
+            for (const tier of bank.tiers) {
+                if (STANDARD_PRINCIPAL >= tier.min && (tier.max === null || STANDARD_PRINCIPAL <= tier.max)) {
+                    rate = tier.annualRate;
+                    break;
+                }
+            }
+            if (rate === null) rate = bank.tiers[bank.tiers.length - 1].annualRate;
+        }
+        history.banks[bank.id].push(rate);
+    }
+
+    // Trim to 90 days
+    if (history.dates.length > 90) {
+        const excess = history.dates.length - 90;
+        history.dates = history.dates.slice(excess);
+        for (const id in history.banks) {
+            history.banks[id] = history.banks[id].slice(excess);
+        }
+    }
+
+    fs.writeFileSync(historyPath, JSON.stringify(history));
+    console.log('History updated for ' + today + ' (' + history.dates.length + ' days)');
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

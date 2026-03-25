@@ -208,8 +208,9 @@
             var netRate = failed ? 0 : bankNetRate(bank);
             var dailyNet = failed ? 0 : bankDailyNet(bank);
             var rowClass = failed ? ' class="scrape-failed"' : '';
+            var dataAttrs = ' data-bank-id="' + escapeHTML(bank.id) + '" data-bank-name="' + escapeHTML(bank.name) + '"';
 
-            html += '<tr' + rowClass + '>' +
+            html += '<tr' + rowClass + dataAttrs + '>' +
                 '<td class="bank-name"><a href="' + escapeHTML(bank.website) + '" target="_blank" rel="noopener">' + escapeHTML(bank.name) + '</a></td>';
 
             if (failed) {
@@ -228,6 +229,14 @@
         });
 
         tbody.innerHTML = html;
+
+        tbody.onclick = function (e) {
+            if (e.target.tagName === 'A') return;
+            var tr = e.target.closest('tr[data-bank-id]');
+            if (tr && !tr.classList.contains('scrape-failed')) {
+                History.show(tr.getAttribute('data-bank-id'), tr.getAttribute('data-bank-name'));
+            }
+        };
     }
 
     // ===== Mobile Card Rendering =====
@@ -249,7 +258,7 @@
             var principalLabel = state.tablePrincipal.toLocaleString('tr-TR');
             var cardClass = failed ? 'mobile-card scrape-failed' : 'mobile-card';
 
-            html += '<div class="' + cardClass + '">' +
+            html += '<div class="' + cardClass + '" data-bank-id="' + escapeHTML(bank.id) + '" data-bank-name="' + escapeHTML(bank.name) + '">' +
                 '<div class="mobile-card-header">' +
                     '<span class="mobile-card-name"><a href="' + escapeHTML(bank.website) + '" target="_blank" rel="noopener">' + escapeHTML(bank.name) + '</a></span>' +
                 '</div>';
@@ -270,6 +279,14 @@
         });
 
         container.innerHTML = html;
+
+        container.onclick = function (e) {
+            if (e.target.tagName === 'A') return;
+            var card = e.target.closest('.mobile-card[data-bank-id]');
+            if (card && !card.classList.contains('scrape-failed')) {
+                History.show(card.getAttribute('data-bank-id'), card.getAttribute('data-bank-name'));
+            }
+        };
     }
 
     // ===== Sort Headers =====
