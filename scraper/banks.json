@@ -111,7 +111,7 @@
       "type": "mevduat",
       "productName": "Günlük Kazandıran Hesap",
       "url": "https://www.isbank.com.tr/gunluk-kazandiran-hesap-faiz-oranlari",
-      "apiUrl": "https://www.isbank.com.tr/_vti_bin/DV.Isbank/PriceAndRate/PriceAndRateService.svc/GetDailyDepositRate?Lang=tr&ChannelType=ISCEP&CurrencyCode=TRY",
+      "apiUrl": "https://www.isbank.com.tr/_vti_bin/DV.Isbank/PriceAndRate/PriceAndRateService.svc/GetDailyDepositRate?Lang=tr&ChannelType=INTERNET&CurrencyCode=TRY",
       "website": "https://www.isbank.com.tr",
       "scrapeType": "api",
       "enabled": true

@@ -136,7 +136,9 @@ const apiParsers = {
     },
 
     'is-bankasi': async (b) => {
-        const data = await fetchGETJSON(b.apiUrl);
+        // Use native fetch — Node.js https module gets blocked by bot protection
+        const res = await fetch(b.apiUrl, { headers: { 'Accept': 'application/json', 'User-Agent': 'Mozilla/5.0' } });
+        const data = await res.json();
         if (!data?.Data?.length) return null;
         const tiers = [];
         for (const item of data.Data) {
