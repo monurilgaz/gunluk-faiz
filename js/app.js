@@ -23,7 +23,10 @@
         localStorage.setItem(FAVORITES_KEY, JSON.stringify(state.favorites));
     }
 
+    var favLocked = false;
+
     function toggleFavorite(bankId) {
+        if (favLocked) return;
         if (state.favorites[bankId]) {
             delete state.favorites[bankId];
         } else {
@@ -35,8 +38,12 @@
         document.querySelectorAll('.fav-btn[data-fav="' + bankId + '"]').forEach(function (btn) {
             btn.classList.toggle('fav-active', active);
         });
-        // Re-sort after a short delay to avoid ghost taps on mobile
-        setTimeout(function () { applyFilters(); }, 300);
+        // Re-sort after delay, block further toggles until done
+        favLocked = true;
+        setTimeout(function () {
+            applyFilters();
+            favLocked = false;
+        }, 500);
     }
 
     function isFavorite(bankId) {
