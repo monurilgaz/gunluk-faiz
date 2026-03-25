@@ -39,7 +39,7 @@ var Calculator = (function () {
         var dGross = dailyGross(principal, annualRate);
         var dTax = withholdingTax(dGross, withholdingRate);
         var dNet = dGross - dTax;
-        var monthlyNet = compoundReturn(principal, annualRate, withholdingRate, 30);
+        var monthlyNet = compoundReturn(principal, annualRate, withholdingRate, 32);
         var yearlyNet = compoundReturn(principal, annualRate, withholdingRate, 365);
 
         return {
