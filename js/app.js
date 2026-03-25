@@ -80,6 +80,12 @@
     }
 
     // ===== Helpers =====
+    function escapeHTML(str) {
+        var div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
     function bankHasRate(bank) {
         return !bank.scrapeFailed && bank.tiers && bank.tiers.length > 0;
     }
@@ -204,7 +210,7 @@
             var rowClass = failed ? ' class="scrape-failed"' : '';
 
             html += '<tr' + rowClass + '>' +
-                '<td class="bank-name"><a href="' + bank.website + '" target="_blank" rel="noopener">' + bank.name + '</a></td>';
+                '<td class="bank-name"><a href="' + escapeHTML(bank.website) + '" target="_blank" rel="noopener">' + escapeHTML(bank.name) + '</a></td>';
 
             if (failed) {
                 html += '<td class="rate-failed" colspan="4">Çekilemedi</td>';
@@ -245,7 +251,7 @@
 
             html += '<div class="' + cardClass + '">' +
                 '<div class="mobile-card-header">' +
-                    '<span class="mobile-card-name"><a href="' + bank.website + '" target="_blank" rel="noopener">' + bank.name + '</a></span>' +
+                    '<span class="mobile-card-name"><a href="' + escapeHTML(bank.website) + '" target="_blank" rel="noopener">' + escapeHTML(bank.name) + '</a></span>' +
                 '</div>';
 
             if (failed) {

@@ -4,10 +4,10 @@ Türkiye'deki mevduat ve katılım bankalarının günlük mevduat faiz oranlar�
 
 ## Özellikler
 
-- **Faiz Oranları Tablosu**: 36 mevduat + 9 katılım bankası
-- **Sıralama & Filtreleme**: Oran, isim, banka türü bazında sıralama ve filtreleme
+- **Faiz Oranları Tablosu**: 20 mevduat + 1 katılım bankası
+- **Sıralama & Filtreleme**: Oran, isim bazında sıralama ve filtreleme
 - **Net Getiri Hesaplayıcı**: Stopaj dahil günlük/aylık/yıllık net getiri hesaplama
-- **Banka Karşılaştırma**: 2-4 banka yan yana karşılaştırma
+- **Canlı Döviz Ticker**: USD, EUR, GBP, altın, BTC anlık fiyatları
 - **Karanlık/Aydınlık Tema**: Sistem temasına uyumlu tema desteği
 - **Responsive Tasarım**: Mobil uyumlu arayüz
 - **Otomatik Güncelleme**: GitHub Actions ile günlük otomatik veri güncelleme
@@ -26,7 +26,7 @@ Faiz oranları `scraper/scrape.js` ile otomatik olarak güncellenir:
 
 ```bash
 cd scraper
-npm install puppeteer
+npm install
 cd ..
 node scraper/scrape.js
 ```
@@ -41,11 +41,11 @@ GitHub Actions her gün 09:00 (TR saati) otomatik çalışır.
 ├── js/
 │   ├── app.js          # Veri yükleme, tablo, sıralama, filtreleme
 │   ├── calculator.js   # Net getiri hesaplayıcı
-│   ├── comparison.js   # Banka karşılaştırma
+│   ├── ticker.js       # Canlı döviz/altın ticker
 │   └── theme.js        # Tema toggle
 ├── data/rates.json     # Banka faiz oranları verisi
 ├── scraper/
-│   ├── scrape.js       # Puppeteer scraper
+│   ├── scrape.js       # Node.js scraper (jsdom)
 │   └── banks.json      # Banka scrape konfigürasyonu
 └── .github/workflows/
     └── scrape.yml      # Günlük otomatik scrape
