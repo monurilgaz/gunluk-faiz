@@ -1,5 +1,7 @@
 // Main application module
 (function () {
+    var FAVORITES_KEY = 'gunluk-faiz-favorites';
+
     var state = {
         banks: [],
         filteredBanks: [],
@@ -7,8 +9,33 @@
         sortDir: 'desc',
         searchQuery: '',
         withholdingRate: 17.5,
-        tablePrincipal: 100000
+        tablePrincipal: 100000,
+        favorites: loadFavorites()
     };
+
+    function loadFavorites() {
+        try {
+            return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || {};
+        } catch (e) { return {}; }
+    }
+
+    function saveFavorites() {
+        localStorage.setItem(FAVORITES_KEY, JSON.stringify(state.favorites));
+    }
+
+    function toggleFavorite(bankId) {
+        if (state.favorites[bankId]) {
+            delete state.favorites[bankId];
+        } else {
+            state.favorites[bankId] = true;
+        }
+        saveFavorites();
+        applyFilters();
+    }
+
+    function isFavorite(bankId) {
+        return !!state.favorites[bankId];
+    }
 
     // ===== Loading Overlay =====
     var overlay = document.getElementById('loadingOverlay');
@@ -159,6 +186,11 @@
             if (aFailed !== bFailed) return aFailed ? 1 : -1;
             if (aFailed && bFailed) return a.name.localeCompare(b.name, 'tr');
 
+            // Favorites pinned to the top
+            var aFav = isFavorite(a.id);
+            var bFav = isFavorite(b.id);
+            if (aFav !== bFav) return aFav ? -1 : 1;
+
             var valA, valB;
             switch (state.sortField) {
                 case 'name':
@@ -210,8 +242,10 @@
             var rowClass = failed ? ' class="scrape-failed"' : '';
             var dataAttrs = ' data-bank-id="' + escapeHTML(bank.id) + '" data-bank-name="' + escapeHTML(bank.name) + '"';
 
+            var favClass = isFavorite(bank.id) ? ' fav-active' : '';
+
             html += '<tr' + rowClass + dataAttrs + '>' +
-                '<td class="bank-name"><a href="' + escapeHTML(bank.website) + '" target="_blank" rel="noopener">' + escapeHTML(bank.name) + '</a></td>';
+                '<td class="bank-name"><button class="fav-btn' + favClass + '" data-fav="' + escapeHTML(bank.id) + '" aria-label="Favori">&#9733;</button><a href="' + escapeHTML(bank.website) + '" target="_blank" rel="noopener">' + escapeHTML(bank.name) + '</a></td>';
 
             if (failed) {
                 html += '<td class="rate-failed" colspan="4">Çekilemedi</td>';
@@ -232,6 +266,11 @@
 
         tbody.onclick = function (e) {
             if (e.target.tagName === 'A') return;
+            var favBtn = e.target.closest('.fav-btn');
+            if (favBtn) {
+                toggleFavorite(favBtn.getAttribute('data-fav'));
+                return;
+            }
             var tr = e.target.closest('tr[data-bank-id]');
             if (tr && !tr.classList.contains('scrape-failed')) {
                 History.show(tr.getAttribute('data-bank-id'), tr.getAttribute('data-bank-name'));
@@ -258,9 +297,12 @@
             var principalLabel = state.tablePrincipal.toLocaleString('tr-TR');
             var cardClass = failed ? 'mobile-card scrape-failed' : 'mobile-card';
 
+            var favClassMobile = isFavorite(bank.id) ? ' fav-active' : '';
+
             html += '<div class="' + cardClass + '" data-bank-id="' + escapeHTML(bank.id) + '" data-bank-name="' + escapeHTML(bank.name) + '">' +
                 '<div class="mobile-card-header">' +
                     '<span class="mobile-card-name"><a href="' + escapeHTML(bank.website) + '" target="_blank" rel="noopener">' + escapeHTML(bank.name) + '</a></span>' +
+                    '<button class="fav-btn' + favClassMobile + '" data-fav="' + escapeHTML(bank.id) + '" aria-label="Favori">&#9733;</button>' +
                 '</div>';
 
             if (failed) {
@@ -282,6 +324,11 @@
 
         container.onclick = function (e) {
             if (e.target.tagName === 'A') return;
+            var favBtn = e.target.closest('.fav-btn');
+            if (favBtn) {
+                toggleFavorite(favBtn.getAttribute('data-fav'));
+                return;
+            }
             var card = e.target.closest('.mobile-card[data-bank-id]');
             if (card && !card.classList.contains('scrape-failed')) {
                 History.show(card.getAttribute('data-bank-id'), card.getAttribute('data-bank-name'));

@@ -400,6 +400,27 @@ a:hover {
     color: var(--text-primary);
 }
 
+.fav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--border-color);
+    padding: 0 6px 0 0;
+    line-height: 1;
+    vertical-align: middle;
+    transition: color var(--transition), transform 0.15s ease;
+}
+
+.fav-btn:hover {
+    color: #f59e0b;
+    transform: scale(1.2);
+}
+
+.fav-btn.fav-active {
+    color: #f59e0b;
+}
+
 .bank-name a {
     color: inherit;
 }
@@ -500,6 +521,11 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
+}
+
+.mobile-card-header .fav-btn {
+    font-size: 1.2rem;
+    padding: 4px;
 }
 
 .mobile-card-name {
