@@ -43,7 +43,7 @@
         setTimeout(function () {
             applyFilters();
             favLocked = false;
-        }, 500);
+        }, 150);
     }
 
     function isFavorite(bankId) {
