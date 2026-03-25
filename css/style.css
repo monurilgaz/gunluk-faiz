@@ -412,9 +412,11 @@ a:hover {
     transition: color var(--transition), transform 0.15s ease;
 }
 
-.fav-btn:hover {
-    color: #f59e0b;
-    transform: scale(1.2);
+@media (hover: hover) {
+    .fav-btn:hover {
+        color: #f59e0b;
+        transform: scale(1.2);
+    }
 }
 
 .fav-btn.fav-active {
