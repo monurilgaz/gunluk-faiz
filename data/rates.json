@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-25T07:11:13.389Z",
+  "lastUpdated": "2026-03-25T09:30:33.143Z",
   "defaultWithholdingRate": 17.5,
   "banks": [
     {
@@ -720,7 +720,44 @@
       "productName": "Günlük Kazandıran Hesap",
       "website": "https://www.isbank.com.tr",
       "url": "https://www.isbank.com.tr/gunluk-kazandiran-hesap-faiz-oranlari",
-      "tiers": []
+      "tiers": [
+        {
+          "min": 5000,
+          "max": 24999.99,
+          "annualRate": 32,
+          "nib": 0
+        },
+        {
+          "min": 25000,
+          "max": 100000.99,
+          "annualRate": 32,
+          "nib": 0
+        },
+        {
+          "min": 100001,
+          "max": 250000.99,
+          "annualRate": 32,
+          "nib": 0
+        },
+        {
+          "min": 250001,
+          "max": 1000000.99,
+          "annualRate": 32,
+          "nib": 0
+        },
+        {
+          "min": 1000001,
+          "max": 10000000.99,
+          "annualRate": 33,
+          "nib": 0
+        },
+        {
+          "min": 10000001,
+          "max": null,
+          "annualRate": 33,
+          "nib": 0
+        }
+      ]
     },
     {
       "id": "odeabank",
