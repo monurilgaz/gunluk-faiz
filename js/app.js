@@ -263,19 +263,6 @@
         });
 
         tbody.innerHTML = html;
-
-        tbody.onclick = function (e) {
-            if (e.target.tagName === 'A') return;
-            var favBtn = e.target.closest('.fav-btn');
-            if (favBtn) {
-                toggleFavorite(favBtn.getAttribute('data-fav'));
-                return;
-            }
-            var tr = e.target.closest('tr[data-bank-id]');
-            if (tr && !tr.classList.contains('scrape-failed')) {
-                History.show(tr.getAttribute('data-bank-id'), tr.getAttribute('data-bank-name'));
-            }
-        };
     }
 
     // ===== Mobile Card Rendering =====
@@ -321,19 +308,6 @@
         });
 
         container.innerHTML = html;
-
-        container.onclick = function (e) {
-            if (e.target.tagName === 'A') return;
-            var favBtn = e.target.closest('.fav-btn');
-            if (favBtn) {
-                toggleFavorite(favBtn.getAttribute('data-fav'));
-                return;
-            }
-            var card = e.target.closest('.mobile-card[data-bank-id]');
-            if (card && !card.classList.contains('scrape-failed')) {
-                History.show(card.getAttribute('data-bank-id'), card.getAttribute('data-bank-name'));
-            }
-        };
     }
 
     // ===== Sort Headers =====
@@ -538,12 +512,47 @@
         });
     }
 
+    // ===== Click Handlers (set once) =====
+    function initClickHandlers() {
+        var tbody = document.getElementById('ratesBody');
+        var mobileCards = document.getElementById('mobileCards');
+
+        tbody.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') return;
+            var favBtn = e.target.closest('.fav-btn');
+            if (favBtn) {
+                e.stopPropagation();
+                toggleFavorite(favBtn.getAttribute('data-fav'));
+                return;
+            }
+            var tr = e.target.closest('tr[data-bank-id]');
+            if (tr && !tr.classList.contains('scrape-failed')) {
+                History.show(tr.getAttribute('data-bank-id'), tr.getAttribute('data-bank-name'));
+            }
+        });
+
+        mobileCards.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') return;
+            var favBtn = e.target.closest('.fav-btn');
+            if (favBtn) {
+                e.stopPropagation();
+                toggleFavorite(favBtn.getAttribute('data-fav'));
+                return;
+            }
+            var card = e.target.closest('.mobile-card[data-bank-id]');
+            if (card && !card.classList.contains('scrape-failed')) {
+                History.show(card.getAttribute('data-bank-id'), card.getAttribute('data-bank-name'));
+            }
+        });
+    }
+
     // ===== Init =====
     function init() {
         initSortHeaders();
         initMobileSort();
         initSearch();
         initTablePrincipal();
+        initClickHandlers();
         loadData();
     }
 
