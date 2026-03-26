@@ -103,7 +103,7 @@ var Calculator = (function () {
                 return tier.annualRate;
             }
         }
-        return bank.tiers[bank.tiers.length - 1].annualRate;
+        return bank.tiers[0].annualRate;
     }
 
     /**
@@ -122,11 +122,11 @@ var Calculator = (function () {
                 return tier.nib || 0;
             }
         }
-        var last = bank.tiers[bank.tiers.length - 1];
-        if (last.nibPercentage > 0) {
-            return principal * (last.nibPercentage / 100);
+        var first = bank.tiers[0];
+        if (first.nibPercentage > 0) {
+            return principal * (first.nibPercentage / 100);
         }
-        return last.nib || 0;
+        return first.nib || 0;
     }
 
     /**
