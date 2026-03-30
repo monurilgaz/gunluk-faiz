@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T07:13:15.206Z",
+  "lastUpdated": "2026-03-30T07:52:26.335Z",
   "defaultWithholdingRate": 17.5,
   "banks": [
     {
@@ -58,73 +58,73 @@
         {
           "min": 20000,
           "max": 250000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 20000
         },
         {
           "min": 250001,
           "max": 500000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 40000
         },
         {
           "min": 500001,
           "max": 1000000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 75000
         },
         {
           "min": 1000001,
           "max": 1500000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 150000
         },
         {
           "min": 1500001,
           "max": 2000000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 175000
         },
         {
           "min": 2000001,
           "max": 3000000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 250000
         },
         {
           "min": 3000001,
           "max": 4000000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 350000
         },
         {
           "min": 4000001,
           "max": 5000000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 450000
         },
         {
           "min": 5000001,
           "max": 7500000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 600000
         },
         {
           "min": 7500001,
           "max": 10000000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 900000
         },
         {
           "min": 10000001,
           "max": 15000000,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 1500000
         },
         {
           "min": 15000001,
           "max": null,
-          "annualRate": 40,
+          "annualRate": 41,
           "nib": 2500000
         }
       ]
