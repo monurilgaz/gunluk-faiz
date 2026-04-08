@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-07T07:27:35.009Z",
+  "lastUpdated": "2026-04-08T07:44:36.570Z",
   "defaultWithholdingRate": 17.5,
   "banks": [
     {
@@ -258,49 +258,49 @@
         {
           "min": 1000000,
           "max": 1249999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 165000
         },
         {
           "min": 1250000,
           "max": 1499999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 175000
         },
         {
           "min": 1500000,
           "max": 1749999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 200000
         },
         {
           "min": 1750000,
           "max": 1999999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 250000
         },
         {
           "min": 2000000,
           "max": 2499999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 325000
         },
         {
           "min": 2500000,
           "max": 2999999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 350000
         },
         {
           "min": 3000000,
           "max": 3999999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 400000
         },
         {
           "min": 4000000,
           "max": 5000000,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 500000
         }
       ]
@@ -578,43 +578,43 @@
         {
           "min": 0,
           "max": 250000,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 30000
         },
         {
           "min": 250000.01,
           "max": 500000,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 60000
         },
         {
           "min": 500000.01,
           "max": 1000000,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 75000
         },
         {
           "min": 1000000.01,
           "max": 1500000,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 100000
         },
         {
           "min": 1500000.01,
           "max": 2500000,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 150000
         },
         {
           "min": 2500000.01,
           "max": 3500000,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 200000
         },
         {
           "min": 3500000.01,
           "max": 5000000,
-          "annualRate": 43,
+          "annualRate": 44,
           "nib": 300000
         }
       ]
@@ -876,55 +876,55 @@
         {
           "min": 0,
           "max": 49999,
-          "annualRate": 44,
+          "annualRate": 44.5,
           "nib": 7500
         },
         {
           "min": 50000,
           "max": 99999,
-          "annualRate": 44,
+          "annualRate": 44.5,
           "nib": 10000
         },
         {
           "min": 100000,
           "max": 249999,
-          "annualRate": 44,
+          "annualRate": 44.5,
           "nib": 15000
         },
         {
           "min": 250000,
           "max": 499999,
-          "annualRate": 44,
+          "annualRate": 44.5,
           "nib": 30000
         },
         {
           "min": 500000,
           "max": 999999,
-          "annualRate": 44,
+          "annualRate": 44.5,
           "nib": 60000
         },
         {
           "min": 1000000,
           "max": 2499999,
-          "annualRate": 44,
+          "annualRate": 44.5,
           "nib": 150000
         },
         {
           "min": 2500000,
           "max": 4999999,
-          "annualRate": 44,
+          "annualRate": 44.5,
           "nib": 300000
         },
         {
           "min": 5000000,
           "max": 9999999,
-          "annualRate": 44,
+          "annualRate": 44.5,
           "nib": 600000
         },
         {
           "min": 10000000,
           "max": null,
-          "annualRate": 31.25,
+          "annualRate": 31.5,
           "nib": 1000000
         }
       ]
