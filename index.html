@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Günlük Faiz - Banka Mevduat Faiz Oranları</title>
     <meta name="description" content="Türkiye'deki bankaların günlük mevduat faiz oranları ve net getiri hesaplayıcı.">
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
     <!-- Live Currency Ticker -->
@@ -225,6 +225,20 @@
         </div>
     </footer>
 
+    <!-- Meltem Popup -->
+    <div class="meltem-overlay" id="meltemPopup" role="dialog" aria-modal="true" aria-labelledby="meltemTitle">
+        <div class="meltem-confetti" id="meltemConfetti" aria-hidden="true"></div>
+        <div class="meltem-floaters" id="meltemFloaters" aria-hidden="true"></div>
+        <div class="meltem-card">
+            <button class="meltem-close" id="meltemClose" aria-label="Kapat">×</button>
+            <h2 class="meltem-title" id="meltemTitle">CANIM MÜDÜRÜM MELTEM HANIM</h2>
+            <div class="meltem-emojis" aria-hidden="true">
+                <span>🌹</span><span>❤️</span><span>💐</span><span>💖</span><span>🌷</span>
+            </div>
+            <p class="meltem-subtitle">İyi ki varsın ✨</p>
+        </div>
+    </div>
+
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-card">
@@ -242,5 +256,6 @@
     <script src="js/calculator.js?v=5"></script>
     <script src="js/history.js?v=5"></script>
     <script src="js/app.js?v=5"></script>
+    <script src="js/popup.js?v=1"></script>
 </body>
 </html>
