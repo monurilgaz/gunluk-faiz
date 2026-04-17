@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-16T07:57:44.001Z",
+  "lastUpdated": "2026-04-17T07:58:36.619Z",
   "defaultWithholdingRate": 17.5,
   "banks": [
     {
@@ -940,31 +940,31 @@
         {
           "min": 5000,
           "max": 49999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 5000
         },
         {
           "min": 50000,
           "max": 99999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 12000
         },
         {
           "min": 100000,
           "max": 249999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 20000
         },
         {
           "min": 250000,
           "max": 499999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 40000
         },
         {
           "min": 500000,
           "max": 999999,
-          "annualRate": 44,
+          "annualRate": 45,
           "nib": 80000
         },
         {
@@ -982,7 +982,7 @@
         {
           "min": 5000000,
           "max": 9999999,
-          "annualRate": 44,
+          "annualRate": 43,
           "nib": 1000000
         }
       ]
