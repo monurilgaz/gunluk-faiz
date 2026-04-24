@@ -81,15 +81,24 @@ function parseNumber(str) {
     if (!str) return 0;
     str = str.replace(/[^\d,.]/g, '');
     if (!str) return 0;
-    const cp = str.split(',');
-    if (cp.length === 2) {
-        str = str.replace(/\./g, '').replace(',', '.');
-    } else {
-        const dp = str.split('.');
-        if (dp.length === 2 && dp[1].length <= 2) { /* keep */ }
-        else { str = str.replace(/\./g, ''); }
+    const lastComma = str.lastIndexOf(',');
+    const lastDot = str.lastIndexOf('.');
+    if (lastComma === -1 && lastDot === -1) return parseFloat(str) || 0;
+    // If both are present, the rightmost is the decimal separator and the other is thousands.
+    if (lastComma !== -1 && lastDot !== -1) {
+        const decSep = lastComma > lastDot ? ',' : '.';
+        const thouSep = decSep === ',' ? '.' : ',';
+        str = str.split(thouSep).join('').replace(decSep, '.');
+        return parseFloat(str) || 0;
     }
-    return parseFloat(str) || 0;
+    // Only one kind of separator. Multiple occurrences → all thousands.
+    const sep = lastComma !== -1 ? ',' : '.';
+    const parts = str.split(sep);
+    if (parts.length > 2) return parseFloat(parts.join('')) || 0;
+    // Single separator: treat as decimal only if the fragment after it is ≤2 digits
+    // (Turkish kuruş). Otherwise it's a thousands separator (e.g. "2,500" → 2500).
+    if (parts[1].length <= 2) return parseFloat(parts[0] + '.' + parts[1]) || 0;
+    return parseFloat(parts.join('')) || 0;
 }
 
 function parseRate(str) {
