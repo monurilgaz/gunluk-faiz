@@ -374,11 +374,11 @@ const htmlParsers = {
         const tiers = [];
         for (let i = 1; i < rows.length; i++) {
             const cells = rows[i].querySelectorAll('td');
-            if (cells.length < 5) continue;
+            if (cells.length < 6) continue;
             const range = parseRange(cells[0].textContent);
             if (!range) continue;
             const rate = parseRate(cells[1].textContent);
-            const nib = parseNumber(cells[4].textContent);
+            const nib = parseNumber(cells[5].textContent);
             if (rate > 0) tiers.push({ min: range.min, max: range.max, annualRate: rate, nib });
         }
         return tiers.length > 0 ? { tiers } : null;
