@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-26T06:57:24.325Z",
+  "lastUpdated": "2026-08-27T17:31:03.284Z",
   "defaultWithholdingRate": 17.5,
   "banks": [
     {
@@ -58,19 +58,19 @@
         {
           "min": 20000,
           "max": 250000,
-          "annualRate": 46,
+          "annualRate": 45,
           "nib": 20000
         },
         {
           "min": 250001,
           "max": 500000,
-          "annualRate": 46,
+          "annualRate": 45,
           "nib": 40000
         },
         {
           "min": 500001,
           "max": 1000000,
-          "annualRate": 46,
+          "annualRate": 45,
           "nib": 75000
         },
         {
@@ -240,85 +240,85 @@
         {
           "min": 10500,
           "max": 49999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 10000
         },
         {
           "min": 50000,
           "max": 99999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 12500
         },
         {
           "min": 100000,
           "max": 249999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 25000
         },
         {
           "min": 250000,
           "max": 499999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 50000
         },
         {
           "min": 500000,
           "max": 749999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 90000
         },
         {
           "min": 750000,
           "max": 999999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 140000
         },
         {
           "min": 1000000,
           "max": 1249999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 165000
         },
         {
           "min": 1250000,
           "max": 1499999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 175000
         },
         {
           "min": 1500000,
           "max": 1749999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 200000
         },
         {
           "min": 1750000,
           "max": 1999999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 250000
         },
         {
           "min": 2000000,
           "max": 2499999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 325000
         },
         {
           "min": 2500000,
           "max": 2999999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 350000
         },
         {
           "min": 3000000,
           "max": 3999999,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 400000
         },
         {
           "min": 4000000,
           "max": 5000000,
-          "annualRate": 45,
+          "annualRate": 44,
           "nib": 500000
         }
       ]
@@ -608,55 +608,55 @@
         {
           "min": 0,
           "max": 250000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 30000
         },
         {
           "min": 250000.01,
           "max": 500000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 60000
         },
         {
           "min": 500000.01,
           "max": 1000000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 100000
         },
         {
           "min": 1000000.01,
           "max": 1500000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 125000
         },
         {
           "min": 1500000.01,
           "max": 2500000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 175000
         },
         {
           "min": 2500000.01,
           "max": 3500000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 250000
         },
         {
           "min": 3500000.01,
           "max": 5000000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 350000
         },
         {
           "min": 5000000.01,
           "max": 7500000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 500000
         },
         {
           "min": 7500000.01,
           "max": 11000000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 1000000
         }
       ]
@@ -1066,25 +1066,25 @@
         {
           "min": 5000000,
           "max": 7499999,
-          "annualRate": 44,
+          "annualRate": 43,
           "nib": 700000
         },
         {
           "min": 7500000,
           "max": 9999999,
-          "annualRate": 44,
+          "annualRate": 43,
           "nib": 1000000
         },
         {
           "min": 10000000,
           "max": 14999999,
-          "annualRate": 44,
+          "annualRate": 43,
           "nib": 1500000
         },
         {
           "min": 15000000,
           "max": 19999999,
-          "annualRate": 44,
+          "annualRate": 43,
           "nib": 2200000
         }
       ]
@@ -1241,55 +1241,55 @@
         {
           "min": 10000,
           "max": 49999,
-          "annualRate": 42.5,
+          "annualRate": 42,
           "nib": 5000
         },
         {
           "min": 50000,
           "max": 99999,
-          "annualRate": 42.5,
+          "annualRate": 42,
           "nib": 7500
         },
         {
           "min": 100000,
           "max": 249999,
-          "annualRate": 42.5,
+          "annualRate": 42,
           "nib": 15000
         },
         {
           "min": 250000,
           "max": 499999,
-          "annualRate": 42.5,
+          "annualRate": 42,
           "nib": 30000
         },
         {
           "min": 500000,
           "max": 999999,
-          "annualRate": 42.5,
+          "annualRate": 42,
           "nib": 60000
         },
         {
           "min": 1000000,
           "max": 1999999,
-          "annualRate": 42.5,
+          "annualRate": 42,
           "nib": 120000
         },
         {
           "min": 2000000,
           "max": 2999999,
-          "annualRate": 42.5,
+          "annualRate": 42,
           "nib": 200000
         },
         {
           "min": 3000000,
           "max": 4999000,
-          "annualRate": 42.5,
+          "annualRate": 42,
           "nib": 300000
         },
         {
           "min": 5000000,
           "max": 10000000,
-          "annualRate": 42.5,
+          "annualRate": 42,
           "nib": 500000
         }
       ]
@@ -1473,61 +1473,61 @@
         {
           "min": 2500,
           "max": 25000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 2500
         },
         {
           "min": 25001,
           "max": 50000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 7500
         },
         {
           "min": 50001,
           "max": 100000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 15000
         },
         {
           "min": 100001,
           "max": 250000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 30000
         },
         {
           "min": 250001,
           "max": 500000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 50000
         },
         {
           "min": 500001,
           "max": 1000000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 80000
         },
         {
           "min": 1000001,
           "max": 2000000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 175000
         },
         {
           "min": 2000001,
           "max": 3000000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 300000
         },
         {
           "min": 3000001,
           "max": 4000000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 450000
         },
         {
           "min": 4000001,
           "max": 4500000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 500000
         },
         {
