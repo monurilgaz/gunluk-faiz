@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-17T11:21:57.937Z",
+  "lastUpdated": "2026-09-18T10:56:02.282Z",
   "defaultWithholdingRate": 17.5,
   "banks": [
     {
@@ -13,28 +13,28 @@
         {
           "min": 1000,
           "max": 8999,
-          "annualRate": 38.5,
+          "annualRate": 38,
           "nib": 0,
           "nibPercentage": 10
         },
         {
           "min": 9000,
           "max": 449999,
-          "annualRate": 38.5,
+          "annualRate": 38,
           "nib": 0,
           "nibPercentage": 10
         },
         {
           "min": 450000,
           "max": 899999,
-          "annualRate": 38.5,
+          "annualRate": 38,
           "nib": 0,
           "nibPercentage": 10
         },
         {
           "min": 900000,
           "max": 25000000,
-          "annualRate": 38.5,
+          "annualRate": 38,
           "nib": 0,
           "nibPercentage": 10
         },
@@ -763,12 +763,6 @@
       "website": "https://www.isbank.com.tr",
       "url": "https://www.isbank.com.tr/gunluk-kazandiran-hesap-faiz-oranlari",
       "tiers": [
-        {
-          "min": 5000,
-          "max": 24999.99,
-          "annualRate": 30,
-          "nib": 0
-        },
         {
           "min": 25000,
           "max": 100000.99,
