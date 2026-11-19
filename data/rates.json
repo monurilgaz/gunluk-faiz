@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-18T15:26:23.672Z",
+  "lastUpdated": "2026-11-19T15:31:28.969Z",
   "defaultWithholdingRate": 17.5,
   "banks": [
     {
@@ -58,13 +58,13 @@
         {
           "min": 20000,
           "max": 250000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 20000
         },
         {
           "min": 250001,
           "max": 500000,
-          "annualRate": 43,
+          "annualRate": 42,
           "nib": 40000
         },
         {
